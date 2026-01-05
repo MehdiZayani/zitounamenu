@@ -21,7 +21,7 @@ export default function MenuDataEditor() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', padding: 20, background: "url('/coffee/bg.png') center / cover fixed" }}>
+    <div style={{ minHeight: '100vh', padding: 20, background: "url('/coffee/menu-bg.jpg') center / cover fixed" }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', background: 'rgba(0,0,0,0.4)', padding: 18, borderRadius: 8 }}>
         <h2 style={{ fontFamily: "'LaLuxes', serif", color: '#efe8d6', fontSize: 36 }}>Menus structurés</h2>
         <p style={{ color: '#c9b896' }}>Copiez/collez ou téléchargez le JSON pour le corriger localement, puis repastez-le ici si vous voulez prévisualiser.</p>

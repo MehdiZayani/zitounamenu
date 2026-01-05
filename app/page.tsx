@@ -36,7 +36,7 @@ const menuData: MenuSection[] = [
     ],
     rightItems: []
   },
-  // PAGE 2 - TOASTS
+  // PAGE 2 - TOASTS (Combined)
   {
     id: "toasts",
     label: "TOASTS",
@@ -50,16 +50,7 @@ const menuData: MenuSection[] = [
       { title: "POULET FUMÉ", price: "18,900", description: "sauce fromage, pesto, poulet fumé, parmesan, oeuf poché" },
       { title: "CHAMPIGNONS", price: "18,900", description: "sauce fromage, oeuf brouillé, champignon sauté, emmental" },
       { title: "CHAMPIGNONS TRUFFÉ", price: "23,000", description: "Champignons, truffes, oeuf poché" },
-      { title: "JAMBON FUMÉ", price: "21,600", description: "sauce fromage, oeuf brouillé, jambon fumé, emmental" }
-    ],
-    rightItems: []
-  },
-  // PAGE 3 - TOASTS (page 2)
-  {
-    id: "toasts-2",
-    label: "TOASTS",
-    subtitle: "Suite",
-    leftItems: [
+      { title: "JAMBON FUMÉ", price: "21,600", description: "sauce fromage, oeuf brouillé, jambon fumé, emmental" },
       { title: "SAUMON OEUFS DE LOMPE", price: "22,900", description: "sauce fromage, saumon, avocat, oeufs de lampe, oeuf poché" },
       { title: "CRUNCHY CHICKEN CÉSAR", price: "22,600", description: "sauce fromage, poulet pané, parmesan, laitue" },
       { title: "SWEET CHILI SHRIMP", price: "29,800", description: "sauce fromage, crevette pané et enrobé de sweet chili sauce, roquette" },
@@ -72,87 +63,85 @@ const menuData: MenuSection[] = [
     ],
     rightItems: []
   },
-  // PAGE 4 - CROISSANTS SALÉS
+  // PAGE 4 - CROISSANTS (Salés + Sucrés)
   {
-    id: "croissants-sales",
-    label: "CROISSANTS SALÉS",
-    subtitle: "Salés",
-    leftItems: [
-      { title: "JAMBON FUMÉ", price: "15,800", description: "sauce fromage, jambon fumé, emmental" },
-      { title: "POULET FUMÉ", price: "17,200", description: "sauce fromage, poulet fumé, emmental, pesto" },
-      { title: "BRESAOLA", price: "17,200", description: "sauce fromage, Bresaola, emmental, pesto, balsamique" },
-      { title: "SAUMON", price: "21,800", description: "sauce fromage, avocat, saumon" }
-    ],
-    rightItems: []
-  },
-  // PAGE 5 - CROISSANTS SUCRÉS + BRIOCHE PERDUE SALÉE
-  {
-    id: "croissants-brioche-salee",
-    label: "CROISSANTS / BRIOCHE",
+    id: "croissants",
+    label: "CROISSANTS",
     subtitle: "Menu",
     leftItems: [
+      { title: "JAMBON FUMÉ", price: "15,800", description: "croissants-sales", extra: "sauce fromage, jambon fumé, emmental" },
+      { title: "POULET FUMÉ", price: "17,200", description: "croissants-sales", extra: "sauce fromage, poulet fumé, emmental, pesto" },
+      { title: "BRESAOLA", price: "17,200", description: "croissants-sales", extra: "sauce fromage, Bresaola, emmental, pesto, balsamique" },
+      { title: "SAUMON", price: "21,800", description: "croissants-sales", extra: "sauce fromage, avocat, saumon" },
       { title: "NUTELLA", price: "12,000", description: "croissants-sucres" },
       { title: "NUTELLA BANANE OU FRAISE", price: "13,000", description: "croissants-sucres" },
       { title: "SPÉCULOOS", price: "12,000", description: "croissants-sucres" },
-      { title: "SPÉCULOOS BANANE OU FRAISE", price: "13,000", description: "croissants-sucres" },
-      { title: "BRESAOLA", price: "14,900", description: "brioche-salee" },
-      { title: "BURRATA", price: "17,800", description: "brioche-salee" },
-      { title: "POULET FUMÉ", price: "17,600", description: "brioche-salee" },
-      { title: "SAUMON FUMÉ", price: "19,900", description: "brioche-salee" }
+      { title: "SPÉCULOOS BANANE OU FRAISE", price: "13,000", description: "croissants-sucres" }
     ],
     rightItems: []
   },
-  // PAGE 6 - GAUFRES SALÉES + CRÊPES/GAUFRES SUCRÉS
+  // PAGE 6 - GAUFRES (Salées + Sucrées)
   {
-    id: "gaufres-crepes",
-    label: "GAUFRES / CRÊPES",
+    id: "gaufres",
+    label: "GAUFRES",
     subtitle: "Menu",
     leftItems: [
       { title: "JAMBON", price: "14,200", description: "gaufres-salees", extra: "Jambon fumé, sauce fromage, emmental, oeuf poché, salade" },
       { title: "BRESAOLA", price: "15,700", description: "gaufres-salees", extra: "Bresaola, emmental, sauce fromage, pesto, oeuf poché" },
-      { title: "NUTELLA", price: "14,600", description: "crepes-gaufres-sucres" },
-      { title: "NUTELLA BANANE", price: "15,800", description: "crepes-gaufres-sucres" },
-      { title: "NUTELLA AMANDES", price: "16,600", description: "crepes-gaufres-sucres" },
-      { title: "NUTELLA SPÉCULOOS", price: "16,900", description: "crepes-gaufres-sucres" },
-      { title: "POMME CARAMEL", price: "13,200", description: "crepes-gaufres-sucres" },
-      { title: "PISTACHE", price: "18,900", description: "crepes-gaufres-sucres" },
-      { title: "PISTACHE FRAMBOISE", price: "20,600", description: "crepes-gaufres-sucres" }
+      { title: "NUTELLA", price: "14,600", description: "gaufres-sucres" },
+      { title: "NUTELLA BANANE", price: "15,800", description: "gaufres-sucres" },
+      { title: "NUTELLA AMANDES", price: "16,600", description: "gaufres-sucres" },
+      { title: "NUTELLA SPÉCULOOS", price: "16,900", description: "gaufres-sucres" },
+      { title: "POMME CARAMEL", price: "13,200", description: "gaufres-sucres" },
+      { title: "PISTACHE", price: "18,900", description: "gaufres-sucres" },
+      { title: "PISTACHE FRAMBOISE", price: "20,600", description: "gaufres-sucres" }
     ],
     rightItems: []
   },
-  // PAGE 6B - CRÊPES SALÉES
+  // PAGE 6B - CRÊPES (Salées + Sucrées)
   {
-    id: "crepes-salees",
-    label: "CRÊPES SALÉES",
-    subtitle: "Salées",
+    id: "crepes",
+    label: "CRÊPES",
+    subtitle: "Menu",
     leftItems: [
-      { title: "THON", price: "15,800", description: "" },
-      { title: "JAMBON FUMÉ", price: "15,800", description: "Sauce à l'ail, mozzarella, jambon fumé" },
-      { title: "POULET ÉPICÉ", price: "17,900", description: "Poulet épicé sauté avec du poivron et de l'oignion, mozzarella" },
-      { title: "SAUMON FUMÉ", price: "23,800", description: "" },
-      { title: "RICOTTA ÉPINARD", price: "14,600", description: "" },
-      { title: "CHAMPIGNONS TRUFFÉS", price: "16,800", description: "" },
-      { title: "TUNISIENNE", price: "16,500", description: "Sauce à l'ail, harissa, thon, oeuf, piment de cayenne, olive" },
-      { title: "GOURMANDE", price: "17,400", description: "Jambon, thon, oeuf" },
-      { title: "FOURRÉE POULET CHAMPIGNONS", price: "21,800", description: "Poulet, champignons, mozzarella, sauce blanche" }
+      { title: "THON", price: "15,800", description: "crepes-salees" },
+      { title: "JAMBON FUMÉ", price: "15,800", description: "crepes-salees", extra: "Sauce à l'ail, mozzarella, jambon fumé" },
+      { title: "POULET ÉPICÉ", price: "17,900", description: "crepes-salees", extra: "Poulet épicé sauté avec du poivron et de l'oignion, mozzarella" },
+      { title: "SAUMON FUMÉ", price: "23,800", description: "crepes-salees" },
+      { title: "RICOTTA ÉPINARD", price: "14,600", description: "crepes-salees" },
+      { title: "CHAMPIGNONS TRUFFÉS", price: "16,800", description: "crepes-salees" },
+      { title: "TUNISIENNE", price: "16,500", description: "crepes-salees", extra: "Sauce à l'ail, harissa, thon, oeuf, piment de cayenne, olive" },
+      { title: "GOURMANDE", price: "17,400", description: "crepes-salees", extra: "Jambon, thon, oeuf" },
+      { title: "FOURRÉE POULET CHAMPIGNONS", price: "21,800", description: "crepes-salees", extra: "Poulet, champignons, mozzarella, sauce blanche" },
+      { title: "NUTELLA", price: "14,600", description: "crepes-sucres" },
+      { title: "NUTELLA BANANE", price: "15,800", description: "crepes-sucres" },
+      { title: "NUTELLA AMANDES", price: "16,600", description: "crepes-sucres" },
+      { title: "NUTELLA SPÉCULOOS", price: "16,900", description: "crepes-sucres" },
+      { title: "POMME CARAMEL", price: "13,200", description: "crepes-sucres" },
+      { title: "PISTACHE", price: "18,900", description: "crepes-sucres" },
+      { title: "PISTACHE FRAMBOISE", price: "20,600", description: "crepes-sucres" }
     ],
     rightItems: []
   },
-  // PAGE 6C - BRIOCHE PERDUE
+  // PAGE 6C - BRIOCHE PERDUE (Sucrées + Salées)
   {
     id: "brioche-perdue",
     label: "BRIOCHE PERDUE",
-    subtitle: "Sucrés",
+    subtitle: "Menu",
     leftItems: [
-      { title: "TRADITIONNEL", price: "12,800", description: "" },
-      { title: "POMME CARAMEL", price: "15,900", description: "" },
-      { title: "PISTACHE", price: "19,200", description: "" },
-      { title: "BANANE CARAMEL NOIX", price: "16,500", description: "" },
-      { title: "FRAMBOISE CARAMEL", price: "17,900", description: "" },
-      { title: "PISTACHE FRAMBOISE", price: "19,900", description: "" },
-      { title: "NUTELLA NOISETTE", price: "16,900", description: "" },
-      { title: "NUTELLA BANANE", price: "17,800", description: "" },
-      { title: "NUTELLA FRAMBOISE OU FRAISE", price: "17,900", description: "" }
+      { title: "TRADITIONNEL", price: "12,800", description: "brioche-sucree" },
+      { title: "POMME CARAMEL", price: "15,900", description: "brioche-sucree" },
+      { title: "PISTACHE", price: "19,200", description: "brioche-sucree" },
+      { title: "BANANE CARAMEL NOIX", price: "16,500", description: "brioche-sucree" },
+      { title: "FRAMBOISE CARAMEL", price: "17,900", description: "brioche-sucree" },
+      { title: "PISTACHE FRAMBOISE", price: "19,900", description: "brioche-sucree" },
+      { title: "NUTELLA NOISETTE", price: "16,900", description: "brioche-sucree" },
+      { title: "NUTELLA BANANE", price: "17,800", description: "brioche-sucree" },
+      { title: "NUTELLA FRAMBOISE OU FRAISE", price: "17,900", description: "brioche-sucree" },
+      { title: "BRESAOLA", price: "14,900", description: "brioche-salee" },
+      { title: "BURRATA", price: "17,800", description: "brioche-salee" },
+      { title: "POULET FUMÉ", price: "17,600", description: "brioche-salee" },
+      { title: "SAUMON FUMÉ", price: "19,900", description: "brioche-salee" }
     ],
     rightItems: []
   },
@@ -261,32 +250,25 @@ const menuData: MenuSection[] = [
     ],
     rightItems: []
   },
-  // PAGE 16 - PIZZAS
+  // PAGE 16-17 - PIZZAS (Classiques + Gourmet)
   {
-    id: "pizzas-1",
+    id: "pizzas",
     label: "PIZZAS",
     subtitle: "Menu",
     leftItems: [
-      { title: "MARGHERITA", price: "18,900", description: "Sauce tomate, mozzarella, basilic" },
-      { title: "VEGETARIANA", price: "21,800", description: "Sauce tomate, mozzarella, légumes grillés" },
-      { title: "TONNO", price: "23,900", description: "Sauce tomate, mozzarella, thon" },
-      { title: "NAPOLITANA", price: "21,900", description: "Sauce tomate, mozzarella, anchois, câpres, olives noirs, origan" },
-      { title: "REGINA", price: "24,800", description: "Sauce tomate, mozzarella, jambon fumé, champignons" },
-      { title: "POULET", price: "23,900", description: "Sauce tomate, mozzarella, poulet" }
-    ],
-    rightItems: []
-  },
-  // PAGE 17 - PIZZAS GOURMET
-  {
-    id: "pizzas-2",
-    label: "PIZZAS GOURMET",
-    subtitle: "Menu",
-    leftItems: [
-      { title: "PEPPERONI", price: "21,200", description: "Sauce tomate, mozzarella, pepperoni" },
-      { title: "QUATTRO FORMAGGI", price: "28,600", description: "Sauce blanche, mozzarella, gorgonzola, parmesan, emmental" },
-      { title: "BURRATA", price: "26,900", description: "Sauce tomate, mozzarella, burrata, roquette, pesto, balsamique" },
-      { title: "BRESAOLA", price: "26,900", description: "Sauce tomate, mozzarella, bresaola" },
-      { title: "TRUFA E FUNGHI", price: "28,400", description: "Crème de truffe, mozzarella, champignons" }
+      // Classiques
+      { title: "MARGHERITA", price: "18,900", description: "Sauce tomate, mozzarella, basilic", extra: "classiques" },
+      { title: "VEGETARIANA", price: "21,800", description: "Sauce tomate, mozzarella, légumes grillés", extra: "classiques" },
+      { title: "TONNO", price: "23,900", description: "Sauce tomate, mozzarella, thon", extra: "classiques" },
+      { title: "NAPOLITANA", price: "21,900", description: "Sauce tomate, mozzarella, anchois, câpres, olives noirs, origan", extra: "classiques" },
+      { title: "REGINA", price: "24,800", description: "Sauce tomate, mozzarella, jambon fumé, champignons", extra: "classiques" },
+      { title: "POULET", price: "23,900", description: "Sauce tomate, mozzarella, poulet", extra: "classiques" },
+      // Gourmet
+      { title: "PEPPERONI", price: "21,200", description: "Sauce tomate, mozzarella, pepperoni", extra: "gourmet" },
+      { title: "QUATTRO FORMAGGI", price: "28,600", description: "Sauce blanche, mozzarella, gorgonzola, parmesan, emmental", extra: "gourmet" },
+      { title: "BURRATA", price: "26,900", description: "Sauce tomate, mozzarella, burrata, roquette, pesto, balsamique", extra: "gourmet" },
+      { title: "BRESAOLA", price: "26,900", description: "Sauce tomate, mozzarella, bresaola", extra: "gourmet" },
+      { title: "TRUFA E FUNGHI", price: "28,400", description: "Crème de truffe, mozzarella, champignons", extra: "gourmet" }
     ],
     rightItems: []
   },
@@ -295,139 +277,90 @@ const menuData: MenuSection[] = [
 
   // PAGE 23 - GLACES
  
-  // PAGE 24 - CAFÉS MENU
+  // PAGE 24-26 - BOISSONS (Cafés, Thé, Boissons, Frappucino, Mojito, Fresh Juice, Matcha)
   {
-    id: "cafes-menu",
-    label: "CAFÉS CLASSIQUES",
+    id: "boissons",
+    label: "BOISSONS",
     subtitle: "Menu",
     leftItems: [
-      { title: "EXPRESS", price: "3,900", description: "5,900" },
-      { title: "AMERICAIN", price: "4,200", description: "6,200" },
-      { title: "CAPPUCIN", price: "4,300", description: "6,400" },
-      { title: "CAFÉ CRÈME", price: "4,600", description: "6,700" },
-      { title: "GRAND TASSE", price: "4,500", description: "" },
-      { title: "GRAND CRÈME", price: "4,800", description: "" },
-      { title: "CAPPUCINO", price: "5,700", description: "" },
-      { title: "AFFOGATO", price: "6,900", description: "" },
-      { title: "GRAND AFFOGATO", price: "10,900", description: "" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - CAFÉS LATTE / CAFÉS GLACÉS
-  {
-    id: "cafes-latte-glaces",
-    label: "CAFÉS LATTE",
-    subtitle: "Latte",
-    leftItems: [
+      // Cafés classiques (avec prix Nespresso dans extra)
+      { title: "EXPRESS", price: "3,900", description: "cafes", extra: "5,900" },
+      { title: "AMERICAIN", price: "4,200", description: "cafes", extra: "6,200" },
+      { title: "CAPPUCIN", price: "4,300", description: "cafes", extra: "6,400" },
+      { title: "CAFÉ CRÈME", price: "4,600", description: "cafes", extra: "6,700" },
+      { title: "GRAND TASSE", price: "4,500", description: "cafes" },
+      { title: "GRAND CRÈME", price: "4,800", description: "cafes" },
+      { title: "CAPPUCINO", price: "5,700", description: "cafes" },
+      { title: "AFFOGATO", price: "6,900", description: "cafes" },
+      { title: "GRAND AFFOGATO", price: "10,900", description: "cafes" },
+      // Cafés Latte
       { title: "PISTACHE", price: "14,600", description: "latte" },
       { title: "NOISETTE", price: "13,400", description: "latte" },
       { title: "NUTELLA / CARAMEL / BEURRE DE CACAHUÈTE / SPECULOSS", price: "12,700", description: "latte" },
+      // Cafés Glacés
       { title: "BEURRE DE CACAHUÈTE", price: "10,200", description: "glaces" },
       { title: "CARAMEL", price: "13,400", description: "glaces" },
       { title: "NUTELLA", price: "13,400", description: "glaces" },
       { title: "NOISETTE", price: "13,400", description: "glaces" },
-      { title: "PISTACHE", price: "15,800", description: "glaces" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - THÉ / CHOCOLAT CHAUD
-  {
-    id: "the-chocolat",
-    label: "THÉ",
-    subtitle: "Menu",
-    leftItems: [
+      { title: "PISTACHE", price: "15,800", description: "glaces" },
+      // Thé
       { title: "THÉ À LA MENTHE", price: "3,900", description: "the" },
       { title: "THÉ INFUSION", price: "5,900", description: "the" },
       { title: "THÉ AUX AMANDES", price: "8,900", description: "the" },
       { title: "THÉ AUX PIGNONS", price: "13,900", description: "the" },
+      // Chocolat Chaud
       { title: "CHOCO", price: "7,500", description: "chocolat" },
-      { title: "CHOCO CHANTILLY", price: "8,500", description: "chocolat" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - BOISSONS FROIDES / DÉTOX
-  {
-    id: "boissons-detox",
-    label: "BOISSONS",
-    subtitle: "Froides",
-    leftItems: [
-      { title: "EAU 0,5", price: "2,500", description: "boissons" },
-      { title: "EAU 1L", price: "3,500", description: "boissons" },
-      { title: "GARCI", price: "3,900", description: "boissons" },
-      { title: "SODA", price: "4,600", description: "boissons" },
-      { title: "BOISSONS ÉNERGÉTIQUES", price: "9,500", description: "boissons" },
-      { title: "DÉTOX CLASSIQUE", price: "9,800", description: "detox|Menthe, citron, concombre" },
-      { title: "DÉTOX IMMUNITÉ", price: "12,800", description: "detox|Orange, carotte, citron, gingembre" },
-      { title: "DÉTOX ÉNERGÉTIQUE", price: "13,900", description: "detox|Carotte, betrave, orange, citron, menthe, gingembre" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - FRAPPUCINO / SMOOTHIES
-  {
-    id: "frappucino-smoothies",
-    label: "FRAPPUCINO",
-    subtitle: "Menu",
-    leftItems: [
+      { title: "CHOCO CHANTILLY", price: "8,500", description: "chocolat" },
+      // Boissons Froides
+      { title: "EAU 0,5", price: "2,500", description: "boissons-froides" },
+      { title: "EAU 1L", price: "3,500", description: "boissons-froides" },
+      { title: "GARCI", price: "3,900", description: "boissons-froides" },
+      { title: "SODA", price: "4,600", description: "boissons-froides" },
+      { title: "BOISSONS ÉNERGÉTIQUES", price: "9,500", description: "boissons-froides" },
+      // Détox
+      { title: "DÉTOX CLASSIQUE", price: "9,800", description: "detox", extra: "Menthe, citron, concombre" },
+      { title: "DÉTOX IMMUNITÉ", price: "12,800", description: "detox", extra: "Orange, carotte, citron, gingembre" },
+      { title: "DÉTOX ÉNERGÉTIQUE", price: "13,900", description: "detox", extra: "Carotte, betrave, orange, citron, menthe, gingembre" },
+      // Frappucino
       { title: "BEURRE DE CACAHOUETTE", price: "13,900", description: "frappucino" },
       { title: "NOISETTE", price: "16,800", description: "frappucino" },
       { title: "NUTELLA", price: "16,800", description: "frappucino" },
       { title: "SPECULOSS", price: "16,800", description: "frappucino" },
       { title: "CARMEL", price: "16,800", description: "frappucino" },
+      // Smoothies
       { title: "FRUITS ROUGE", price: "16,800", description: "smoothies" },
       { title: "FRAISE", price: "16,800", description: "smoothies" },
       { title: "PÊCHE BANANE", price: "16,800", description: "smoothies" },
       { title: "PINACOLADA", price: "16,800", description: "smoothies" },
-      { title: "EXOTIC", price: "16,800", description: "smoothies" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - MOJITO / GRANITE / ICETEA
-  {
-    id: "mojito-granite-icetea",
-    label: "MOJITO",
-    subtitle: "Menu",
-    leftItems: [
+      { title: "EXOTIC", price: "16,800", description: "smoothies" },
+      // Mojito
       { title: "VIRGIN MOJITO", price: "11,900", description: "mojito" },
       { title: "BLUE / RED MOJITO", price: "13,400", description: "mojito" },
       { title: "MOJITO ENERGIE", price: "16,900", description: "mojito" },
+      // Granité
       { title: "CITRON", price: "9,900", description: "granite" },
       { title: "FRAISE", price: "11,900", description: "granite" },
       { title: "PINACOLADA", price: "13,900", description: "granite" },
+      // Ice Tea
       { title: "TEA FRAMBOISE", price: "9,700", description: "icetea" },
-      { title: "TEA PÊCHE", price: "9,700", description: "icetea" }
-    ],
-    rightItems: []
-  },
-  // PAGE 25 - FRESH JUICE
-  {
-    id: "fresh-juice",
-    label: "FRESH JUICE",
-    subtitle: "Menu",
-    leftItems: [
-      { title: "CITRONNADE", price: "7,800", description: "" },
-      { title: "JUS D'ORANGE", price: "8,200", description: "" },
-      { title: "CITRONNADE AUX AMANDES", price: "10,800", description: "" },
-      { title: "FRAISE", price: "9,200", description: "" },
-      { title: "BANANE", price: "9,800", description: "" },
-      { title: "DATTES BANANE", price: "12,200", description: "" },
-      { title: "TRIPPLE D'AMOUR", price: "15,600", description: "Banane, dattes, fruits secs, miel" },
-      { title: "MAHBOUL ZITOUNA", price: "18,900", description: "Jus de fruits, fruits secs, boule de glace" }
-    ],
-    rightItems: []
-  },
-  // PAGE 26 - MATCHA
-  {
-    id: "matcha",
-    label: "MATCHA",
-    subtitle: "Menu",
-    leftItems: [
-      { title: "ANANAS", price: "13,800", description: "" },
-      { title: "MANGUE", price: "13,800", description: "" },
-      { title: "NOISETTE", price: "15,800", description: "" },
-      { title: "VANILLE", price: "15,800", description: "" },
-      { title: "FRUITS ROUGES", price: "15,800", description: "" },
-      { title: "PISTACHE", price: "15,800", description: "" },
-      { title: "CARAMEL", price: "15,800", description: "" }
+      { title: "TEA PÊCHE", price: "9,700", description: "icetea" },
+      // Fresh Juice
+      { title: "CITRONNADE", price: "7,800", description: "fresh-juice" },
+      { title: "JUS D'ORANGE", price: "8,200", description: "fresh-juice" },
+      { title: "CITRONNADE AUX AMANDES", price: "10,800", description: "fresh-juice" },
+      { title: "FRAISE", price: "9,200", description: "fresh-juice" },
+      { title: "BANANE", price: "9,800", description: "fresh-juice" },
+      { title: "DATTES BANANE", price: "12,200", description: "fresh-juice" },
+      { title: "TRIPPLE D'AMOUR", price: "15,600", description: "fresh-juice", extra: "Banane, dattes, fruits secs, miel" },
+      { title: "MAHBOUL ZITOUNA", price: "18,900", description: "fresh-juice", extra: "Jus de fruits, fruits secs, boule de glace" },
+      // Matcha
+      { title: "ANANAS", price: "13,800", description: "matcha" },
+      { title: "MANGUE", price: "13,800", description: "matcha" },
+      { title: "NOISETTE", price: "15,800", description: "matcha" },
+      { title: "VANILLE", price: "15,800", description: "matcha" },
+      { title: "FRUITS ROUGES", price: "15,800", description: "matcha" },
+      { title: "PISTACHE", price: "15,800", description: "matcha" },
+      { title: "CARAMEL", price: "15,800", description: "matcha" }
     ],
     rightItems: []
   },
@@ -454,7 +387,7 @@ const PatesMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -528,7 +461,7 @@ const SaladesMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -628,7 +561,7 @@ const OmeletteMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -719,10 +652,10 @@ const OmeletteMenu = ({ section }: { section: MenuSection }) => {
   );
 };
 
-const GaufresCrepsMenu = ({ section }: { section: MenuSection }) => {
+const GaufresMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
   const gaufresSaleesItems = items.filter(item => item.description === "gaufres-salees");
-  const crepesGaufresSucresItems = items.filter(item => item.description === "crepes-gaufres-sucres");
+  const gaufresSucresItems = items.filter(item => item.description === "gaufres-sucres");
 
   const renderItems = (itemsList: MenuItem[]) => (
     <div className="flex flex-col gap-4">
@@ -763,7 +696,7 @@ const GaufresCrepsMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -773,7 +706,7 @@ const GaufresCrepsMenu = ({ section }: { section: MenuSection }) => {
         className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
         style={{ maxWidth: 700 }}
       >
-        {/* GAUFRES Salées Title */}
+        {/* GAUFRES Title */}
         <div className="text-center mb-6 mt-6">
           <h1
             className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
@@ -785,32 +718,32 @@ const GaufresCrepsMenu = ({ section }: { section: MenuSection }) => {
             className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
             style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
           >
-            Salées
+            Menu
           </span>
           <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
         </div>
 
-        {/* Gaufres Salées Items */}
-        {renderItems(gaufresSaleesItems)}
-
-        {/* CRÊPES / GAUFRES Sucrés Title */}
-        <div className="text-center mb-6 mt-10">
-          <h1
-            className="text-2xl sm:text-3xl md:text-[44px] tracking-widest"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.12em", fontWeight: 400, marginBottom: 0 }}
-          >
-            CRÊPES / GAUFRES
-          </h1>
+        {/* Gaufres Salées Section */}
+        <div className="text-center mb-4">
           <span
-            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
+            className="text-lg sm:text-xl md:text-[28px]"
             style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
           >
-            Sucrés
+            Salées
           </span>
         </div>
+        {renderItems(gaufresSaleesItems)}
 
-        {/* Crêpes/Gaufres Sucrés Items */}
-        {renderItems(crepesGaufresSucresItems)}
+        {/* Gaufres Sucrées Section */}
+        <div className="text-center mb-4 mt-8">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Sucrées
+          </span>
+        </div>
+        {renderItems(gaufresSucresItems)}
 
         <div className="pb-2" />
       </div>
@@ -818,14 +751,51 @@ const GaufresCrepsMenu = ({ section }: { section: MenuSection }) => {
   );
 };
 
-const CrepesSaleesMenu = ({ section }: { section: MenuSection }) => {
+const CrepesMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
+  const crepesSaleesItems = items.filter(item => item.description === "crepes-salees");
+  const crepesSucresItems = items.filter(item => item.description === "crepes-sucres");
+
+  const renderItems = (itemsList: MenuItem[]) => (
+    <div className="flex flex-col gap-4">
+      {itemsList.map((item, idx) => {
+        const isLeft = idx % 2 === 0;
+        return (
+          <div
+            key={idx}
+            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+          >
+            <div className="flex justify-between items-center px-2">
+              <h3
+                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
+              >
+                {item.title}
+              </h3>
+              <span
+                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
+              >
+                {item.price}
+              </span>
+            </div>
+            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
+            {item.extra && (
+              <p className="text-xs mt-1 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
+                {item.extra}
+              </p>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -835,8 +805,8 @@ const CrepesSaleesMenu = ({ section }: { section: MenuSection }) => {
         className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
         style={{ maxWidth: 700 }}
       >
-        {/* CRÊPES Salées Title */}
-        <div className="text-center mb-8 mt-6">
+        {/* CRÊPES Title */}
+        <div className="text-center mb-6 mt-6">
           <h1
             className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
             style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
@@ -847,44 +817,32 @@ const CrepesSaleesMenu = ({ section }: { section: MenuSection }) => {
             className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
             style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
           >
-            Salées
+            Menu
           </span>
           <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
         </div>
 
-        {/* Items in alternating left/right pattern */}
-        <div className="flex flex-col gap-5">
-          {items.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
-              >
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-                {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+        {/* Crêpes Salées Section */}
+        <div className="text-center mb-4">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Salées
+          </span>
         </div>
+        {renderItems(crepesSaleesItems)}
+
+        {/* Crêpes Sucrées Section */}
+        <div className="text-center mb-4 mt-8">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Sucrées
+          </span>
+        </div>
+        {renderItems(crepesSucresItems)}
 
         <div className="pb-2" />
       </div>
@@ -894,118 +852,8 @@ const CrepesSaleesMenu = ({ section }: { section: MenuSection }) => {
 
 const BriocheMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
-  // First 3 items are on the right side with illustration on left
-  const topItems = items.slice(0, 3);
-  // Remaining items alternate left/right
-  const bottomItems = items.slice(3);
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* BRIOCHE PERDUE Title */}
-        <div className="text-center mb-8 mt-6">
-          <h1
-            className="text-2xl sm:text-3xl md:text-[48px] tracking-widest"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.12em", fontWeight: 400, marginBottom: 0 }}
-          >
-            BRIOCHE PERDUE
-          </h1>
-          <span
-            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-          >
-            Sucrés
-          </span>
-          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-        </div>
-
-        {/* Top section with illustration and first 3 items */}
-        <div className="flex gap-4 mb-6">
-          {/* Brioche Illustration */}
-          <div className="hidden sm:flex items-center justify-center" style={{ width: "30%" }}>
-            <svg width="100" height="90" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Brioche shape - French toast style */}
-              <path d="M15 60 L20 25 L80 20 L85 55 L80 70 L20 75 Z" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-              {/* Top surface */}
-              <path d="M20 25 L25 30 L75 25 L80 20" stroke="#c9b896" strokeWidth="1" fill="none" />
-              <path d="M25 30 L30 65 L75 60 L75 25" stroke="#c9b896" strokeWidth="1" fill="none" strokeDasharray="3 2" />
-              {/* Dots/texture */}
-              <circle cx="35" cy="40" r="2" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              <circle cx="50" cy="35" r="2" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              <circle cx="65" cy="38" r="2" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              <circle cx="40" cy="52" r="1.5" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              <circle cx="55" cy="48" r="1.5" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              <circle cx="68" cy="50" r="1.5" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-            </svg>
-          </div>
-          {/* First 3 items on right */}
-          <div className="flex-1 flex flex-col gap-4">
-            {topItems.map((item, idx) => (
-              <div key={idx} className="sm:ml-auto sm:w-[85%]">
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom items - all left aligned */}
-        <div className="flex flex-col gap-5">
-          {bottomItems.map((item, idx) => (
-            <div key={idx} className="w-full sm:w-[75%]">
-              <div className="flex justify-between items-center px-2">
-                <h3
-                  className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
-                >
-                  {item.title}
-                </h3>
-                <span
-                  className="text-lg sm:text-xl md:text-[22px] ml-2"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                >
-                  {item.price}
-                </span>
-              </div>
-              <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-            </div>
-          ))}
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const CroissantsBriocheSaleeMenu = ({ section }: { section: MenuSection }) => {
-  const items = section.leftItems || [];
-  const croissantsSucresItems = items.filter(item => item.description === "croissants-sucres");
-  const briocheSaleeItems = items.filter(item => item.description === "brioche-salee");
+  const briocheSucreesItems = items.filter(item => item.description === "brioche-sucree");
+  const briocheSaleesItems = items.filter(item => item.description === "brioche-salee");
 
   const renderItems = (itemsList: MenuItem[]) => (
     <div className="flex flex-col gap-4">
@@ -1041,7 +889,7 @@ const CroissantsBriocheSaleeMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1051,35 +899,10 @@ const CroissantsBriocheSaleeMenu = ({ section }: { section: MenuSection }) => {
         className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
         style={{ maxWidth: 700 }}
       >
-        {/* CROISSANTS Sucrés Title */}
-        <div className="text-center mb-4 mt-6">
+        {/* BRIOCHE PERDUE Title */}
+        <div className="text-center mb-6 mt-6">
           <h1
-            className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-          >
-            CROISSANTS
-          </h1>
-          <span
-            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-          >
-            Sucrés
-          </span>
-        </div>
-
-        {/* Note */}
-        <p className="text-center text-sm mb-6" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-          Tous nos croissants sucrés sont servis avec un café et un mini jus
-        </p>
-        <div className="mx-auto mb-6" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-
-        {/* Croissants Sucrés Items */}
-        {renderItems(croissantsSucresItems)}
-
-        {/* BRIOCHE PERDUE Salée Title */}
-        <div className="text-center mb-6 mt-10">
-          <h1
-            className="text-2xl sm:text-3xl md:text-[44px] tracking-widest"
+            className="text-2xl sm:text-3xl md:text-[48px] tracking-widest"
             style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.12em", fontWeight: 400, marginBottom: 0 }}
           >
             BRIOCHE PERDUE
@@ -1088,13 +911,131 @@ const CroissantsBriocheSaleeMenu = ({ section }: { section: MenuSection }) => {
             className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
             style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
           >
-            Salée
+            Menu
           </span>
           <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
         </div>
 
-        {/* Brioche Salée Items */}
-        {renderItems(briocheSaleeItems)}
+        {/* Sucrées Section */}
+        <div className="text-center mb-4">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Sucrées
+          </span>
+        </div>
+        {renderItems(briocheSucreesItems)}
+
+        {/* Salées Section */}
+        <div className="text-center mb-4 mt-8">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Salées
+          </span>
+        </div>
+        {renderItems(briocheSaleesItems)}
+
+        <div className="pb-2" />
+      </div>
+    </div>
+  );
+};
+
+const CroissantsMenu = ({ section }: { section: MenuSection }) => {
+  const items = section.leftItems || [];
+  const croissantsSalesItems = items.filter(item => item.description === "croissants-sales");
+  const croissantsSucresItems = items.filter(item => item.description === "croissants-sucres");
+
+  const renderItems = (itemsList: MenuItem[]) => (
+    <div className="flex flex-col gap-4">
+      {itemsList.map((item, idx) => {
+        const isLeft = idx % 2 === 0;
+        return (
+          <div
+            key={idx}
+            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+          >
+            <div className="flex justify-between items-center px-2">
+              <h3
+                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
+              >
+                {item.title}
+              </h3>
+              <span
+                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
+              >
+                {item.price}
+              </span>
+            </div>
+            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
+            {item.extra && (
+              <p className="text-xs mt-1 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
+                {item.extra}
+              </p>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <div
+      className="min-h-fit w-screen flex items-start justify-center"
+      style={{
+        backgroundImage: "url('/coffee/boissons-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll"
+      }}
+    >
+      <div
+        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
+        style={{ maxWidth: 700 }}
+      >
+        {/* CROISSANTS Title */}
+        <div className="text-center mb-6 mt-6">
+          <h1
+            className="text-2xl sm:text-3xl md:text-[48px] tracking-widest"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.12em", fontWeight: 400, marginBottom: 0 }}
+          >
+            CROISSANTS
+          </h1>
+          <span
+            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Menu
+          </span>
+          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
+        </div>
+
+        {/* Salés Section */}
+        <div className="text-center mb-4">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Salés
+          </span>
+        </div>
+        {renderItems(croissantsSalesItems)}
+
+        {/* Sucrés Section */}
+        <div className="text-center mb-4 mt-8">
+          <span
+            className="text-lg sm:text-xl md:text-[28px]"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Sucrés
+          </span>
+        </div>
+        {renderItems(croissantsSucresItems)}
 
         <div className="pb-2" />
       </div>
@@ -1118,7 +1059,7 @@ const CroissantsSalesMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1260,7 +1201,7 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1380,6 +1321,101 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
   );
 };
 
+// Combined Toasts Menu (all 18 items on one page)
+const ToastsCombinedMenu = ({ section }: { section: MenuSection }) => {
+  const items = section.leftItems || [];
+
+  return (
+    <div
+      className="min-h-fit w-screen flex items-start justify-center"
+      style={{
+        backgroundImage: "url('/coffee/boissons-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll"
+      }}
+    >
+      <div
+        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
+        style={{ maxWidth: 700 }}
+      >
+        {/* TOASTS Title */}
+        <div className="text-center mb-4 mt-6">
+          <h1
+            className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
+          >
+            TOASTS
+          </h1>
+          <span
+            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Menu
+          </span>
+        </div>
+
+        {/* Note */}
+        <p className="text-center text-sm mb-4" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
+          Tous nos toasts sont servis avec un café et un mini jus
+        </p>
+        <div className="mx-auto mb-6" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
+
+        {/* Items in alternating left/right pattern */}
+        <div className="flex flex-col gap-4">
+          {items.map((item, idx) => {
+            const isLeft = idx % 2 === 0;
+            return (
+              <div
+                key={idx}
+                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+              >
+                <div className="flex justify-between items-center px-2">
+                  <h3
+                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <span
+                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
+                  >
+                    {item.price}
+                  </span>
+                </div>
+                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
+                {item.description && (
+                  <p className="text-xs mt-1 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
+                    {item.description}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Toast illustration at bottom */}
+        <div className="flex justify-center mt-8 mb-4">
+          <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-50">
+            {/* Toast slice */}
+            <rect x="15" y="20" width="70" height="50" rx="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
+            {/* Crust */}
+            <rect x="20" y="25" width="60" height="40" rx="3" stroke="#c9b896" strokeWidth="1" fill="none"/>
+            {/* Toppings */}
+            <circle cx="35" cy="40" r="6" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
+            <circle cx="55" cy="38" r="5" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
+            <circle cx="65" cy="50" r="4" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
+            <ellipse cx="45" cy="52" rx="8" ry="5" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
+          </svg>
+        </div>
+
+        <div className="pb-2" />
+      </div>
+    </div>
+  );
+};
+
 const ToastsMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
 
@@ -1387,7 +1423,7 @@ const ToastsMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1466,7 +1502,7 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1675,7 +1711,7 @@ const LasagnesRisottoMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1761,7 +1797,7 @@ const PlatsMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1835,7 +1871,7 @@ const BowlsMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -1930,7 +1966,7 @@ const SandwichsMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -2021,19 +2057,54 @@ const SandwichsMenu = ({ section }: { section: MenuSection }) => {
 
 const PizzasMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
+  
+  // Séparer les pizzas par catégorie
+  const classiques = items.filter(item => item.extra === "classiques");
+  const gourmet = items.filter(item => item.extra === "gourmet");
+
+  const renderPizzaItem = (item: MenuItem, idx: number, startIdx: number = 0) => {
+    const isLeft = (idx + startIdx) % 2 === 0;
+    return (
+      <div
+        key={idx}
+        className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+      >
+        <div className="flex justify-between items-center px-2">
+          <h3
+            className="text-xl sm:text-2xl md:text-[28px] tracking-wider"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
+          >
+            {item.title}
+          </h3>
+          <span
+            className="text-xl sm:text-2xl md:text-[26px]"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
+          >
+            {item.price}
+          </span>
+        </div>
+        <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
+        {item.description && (
+          <p className="text-sm mt-2 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
+            {item.description}
+          </p>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
       }}
     >
       <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
+        className="w-[92vw] sm:w-[88vw] min-h-auto flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
         style={{ maxWidth: 700 }}
       >
         {/* PIZZAS Title */}
@@ -2053,99 +2124,34 @@ const PizzasMenu = ({ section }: { section: MenuSection }) => {
           <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
         </div>
 
-        {/* Items in alternating left/right pattern */}
-        <div className="flex flex-col gap-6">
-          {items.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
-              >
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-xl sm:text-2xl md:text-[28px] tracking-wider"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-xl sm:text-2xl md:text-[26px]"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-                {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+        {/* Classiques Section */}
+        <div className="mb-8">
+          <h2
+            className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Classiques
+          </h2>
+          <div className="flex flex-col gap-6">
+            {classiques.map((item, idx) => renderPizzaItem(item, idx))}
+          </div>
         </div>
 
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const PizzasGourmetMenu = ({ section }: { section: MenuSection }) => {
-  const items = section.leftItems || [];
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* Items in alternating left/right pattern */}
-        <div className="flex flex-col gap-6 mt-6">
-          {items.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
-              >
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-xl sm:text-2xl md:text-[28px] tracking-wider"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-xl sm:text-2xl md:text-[26px]"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-                {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+        {/* Gourmet Section */}
+        <div className="mb-8">
+          <h2
+            className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
+            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Gourmet
+          </h2>
+          <div className="flex flex-col gap-6">
+            {gourmet.map((item, idx) => renderPizzaItem(item, idx, classiques.length))}
+          </div>
         </div>
 
         {/* Pizza illustration at bottom */}
-        <div className="flex justify-center mt-10 mb-4">
+        <div className="flex justify-center mt-6 mb-4">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 sm:w-40 opacity-50">
             {/* Outer circle */}
             <circle cx="60" cy="60" r="55" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
@@ -2178,143 +2184,28 @@ const PizzasGourmetMenu = ({ section }: { section: MenuSection }) => {
   );
 };
 
-const CafesMenu = ({ section }: { section: MenuSection }) => {
+const BoissonsMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
-  // Items with Nespresso price (first 4)
-  const itemsWithNespresso = items.slice(0, 4);
-  // Items without Nespresso price
-  const itemsWithoutNespresso = items.slice(4);
+  
+  // Filter items by category
+  const cafesItems = items.filter(item => item.description === "cafes");
+  const cafesWithNespresso = cafesItems.filter(item => item.extra);
+  const cafesWithoutNespresso = cafesItems.filter(item => !item.extra);
+  const latteItems = items.filter(item => item.description === "latte");
+  const glacesItems = items.filter(item => item.description === "glaces");
+  const theItems = items.filter(item => item.description === "the");
+  const chocolatItems = items.filter(item => item.description === "chocolat");
+  const boissonsItems = items.filter(item => item.description === "boissons-froides");
+  const detoxItems = items.filter(item => item.description === "detox");
+  const frappucinoItems = items.filter(item => item.description === "frappucino");
+  const smoothiesItems = items.filter(item => item.description === "smoothies");
+  const mojitoItems = items.filter(item => item.description === "mojito");
+  const graniteItems = items.filter(item => item.description === "granite");
+  const iceteaItems = items.filter(item => item.description === "icetea");
+  const freshJuiceItems = items.filter(item => item.description === "fresh-juice");
+  const matchaItems = items.filter(item => item.description === "matcha");
 
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* CAFÉS Title */}
-        <div className="text-center mb-6 mt-6">
-          <h1
-            className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-          >
-            CAFÉS
-          </h1>
-          <span
-            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-            style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-          >
-            Menu
-          </span>
-          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-        </div>
-
-        {/* Header with NESPRESSO label */}
-        <div className="flex justify-end mb-2 px-2">
-          <span
-            className="text-sm sm:text-base md:text-[18px] tracking-wider"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.1em" }}
-          >
-            NESPRESSO
-          </span>
-        </div>
-
-        {/* Items with Nespresso prices */}
-        <div className="flex flex-col gap-4 mb-6">
-          {itemsWithNespresso.map((item, idx) => (
-            <div key={idx} className="w-full">
-              <div className="flex justify-between items-center px-2">
-                <h3
-                  className="text-lg sm:text-xl md:text-[22px] tracking-wider flex-1"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-                >
-                  {item.title}
-                </h3>
-                <span
-                  className="text-lg sm:text-xl md:text-[20px] w-24 text-center"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                >
-                  {item.price}
-                </span>
-                <span
-                  className="text-lg sm:text-xl md:text-[20px] w-24 text-right"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                >
-                  {item.description}
-                </span>
-              </div>
-              <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-            </div>
-          ))}
-        </div>
-
-        {/* Items without Nespresso - alternating left/right */}
-        <div className="flex flex-col gap-4 relative">
-          {itemsWithoutNespresso.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'} relative`}
-              >
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-lg sm:text-xl md:text-[20px]"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-                
-                {/* Coffee cup icons */}
-                {idx === 0 && (
-                  <div className="hidden sm:block absolute -right-20 top-0 w-16 opacity-50">
-                    <svg viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <ellipse cx="25" cy="35" rx="20" ry="8" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                      <path d="M5 35 L5 20 Q5 10 25 10 Q45 10 45 20 L45 35" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                      <ellipse cx="25" cy="10" rx="10" ry="3" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                    </svg>
-                  </div>
-                )}
-                {idx === 4 && (
-                  <div className="hidden sm:block absolute -left-20 top-0 w-16 opacity-50">
-                    <svg viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10 40 Q10 45 30 45 Q50 45 50 40 L50 15 Q50 10 30 10 Q10 10 10 15 Z" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                      <ellipse cx="30" cy="12" rx="18" ry="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                      <path d="M50 20 Q58 20 58 28 Q58 36 50 36" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                    </svg>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const CafesLatteGlacesMenu = ({ section }: { section: MenuSection }) => {
-  const latteItems = section.leftItems?.filter(item => item.description === "latte") || [];
-  const glacesItems = section.leftItems?.filter(item => item.description === "glaces") || [];
-
-  const renderItems = (items: MenuItem[]) => (
+  const renderItems = (items: MenuItem[], showDescription = false) => (
     <div className="flex flex-col gap-4">
       {items.map((item, idx) => {
         const isLeft = idx % 2 === 0;
@@ -2331,288 +2222,16 @@ const CafesLatteGlacesMenu = ({ section }: { section: MenuSection }) => {
                 {item.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[20px] ml-2 whitespace-nowrap"
+                className="text-base sm:text-lg md:text-[18px] ml-2 whitespace-nowrap"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
               >
                 {item.price}
               </span>
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-          </div>
-        );
-      })}
-    </div>
-  );
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* CAFÉS LATTE Section */}
-        <div className="mb-10 mt-6">
-          <div className="text-center mb-6">
-            <h1
-              className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-            >
-              CAFÉS
-            </h1>
-            <span
-              className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Latte
-            </span>
-            <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-          </div>
-          {renderItems(latteItems)}
-        </div>
-
-        {/* CAFÉS GLACÉS Section */}
-        <div className="mb-8">
-          <div className="text-center mb-6">
-            <h1
-              className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-            >
-              CAFÉS
-            </h1>
-            <span
-              className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Glacés
-            </span>
-            <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-          </div>
-          {renderItems(glacesItems)}
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const TheChocolatMenu = ({ section }: { section: MenuSection }) => {
-  const theItems = section.leftItems?.filter(item => item.description === "the") || [];
-  const chocolatItems = section.leftItems?.filter(item => item.description === "chocolat") || [];
-
-  const renderItems = (items: MenuItem[]) => (
-    <div className="flex flex-col gap-4">
-      {items.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
-        return (
-          <div
-            key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-          >
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-              >
-                {item.title}
-              </h3>
-              <span
-                className="text-lg sm:text-xl md:text-[20px]"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-              >
-                {item.price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-          </div>
-        );
-      })}
-    </div>
-  );
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* THÉ Section */}
-        <div className="relative mb-10 mt-6">
-          <div className="flex items-start">
-            {/* Teapot illustration */}
-            <div className="hidden sm:block w-20 mr-4 opacity-50">
-              <svg viewBox="0 0 70 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Teapot body */}
-                <ellipse cx="35" cy="40" rx="25" ry="15" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <path d="M10 40 Q10 25 35 20 Q60 25 60 40" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Lid */}
-                <ellipse cx="35" cy="20" rx="12" ry="4" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <ellipse cx="35" cy="15" rx="4" ry="2" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                {/* Spout */}
-                <path d="M60 35 Q70 30 68 20" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Handle */}
-                <path d="M10 30 Q-5 35 10 45" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-              </svg>
-            </div>
-            <div className="flex-1">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h1
-                    className="text-4xl sm:text-5xl md:text-[64px] tracking-widest"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-                  >
-                    THÉ
-                  </h1>
-                  <span
-                    className="block text-xl sm:text-2xl md:text-[36px]"
-                    style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                  >
-                    Menu
-                  </span>
-                </div>
-                {/* Tea cup illustration on right */}
-                <div className="hidden sm:block w-16 opacity-50">
-                  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Cup */}
-                    <path d="M8 15 L10 40 Q10 45 25 45 Q40 45 40 40 L42 15" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                    <ellipse cx="25" cy="15" rx="17" ry="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                    {/* Handle */}
-                    <path d="M42 20 Q52 20 52 30 Q52 38 42 38" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                    {/* Tea bag */}
-                    <line x1="30" y1="10" x2="35" y2="2" stroke="#c9b896" strokeWidth="1"/>
-                    <rect x="33" y="0" width="6" height="4" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
-                  </svg>
-                </div>
-              </div>
-              <div className="mx-auto mt-3 mb-6" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              {renderItems(theItems)}
-            </div>
-          </div>
-        </div>
-
-        {/* CHOCOLAT CHAUD Section */}
-        <div className="relative mb-8">
-          <div className="text-center mb-6">
-            <h1
-              className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-            >
-              CHOCOLAT
-            </h1>
-            <span
-              className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Chaud
-            </span>
-            <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-          </div>
-          <div className="flex items-start">
-            {/* Hot chocolate illustration */}
-            <div className="hidden sm:block w-20 mr-4 opacity-50">
-              <svg viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Glass */}
-                <path d="M15 20 L18 75 Q18 80 30 80 Q42 80 42 75 L45 20" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <ellipse cx="30" cy="20" rx="15" ry="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Whipped cream */}
-                <path d="M20 20 Q25 10 30 15 Q35 8 40 20" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                {/* Chocolate sticks */}
-                <line x1="25" y1="5" x2="22" y2="25" stroke="#c9b896" strokeWidth="2"/>
-                <line x1="32" y1="3" x2="30" y2="23" stroke="#c9b896" strokeWidth="2"/>
-                <line x1="38" y1="6" x2="36" y2="26" stroke="#c9b896" strokeWidth="2"/>
-              </svg>
-            </div>
-            <div className="flex-1">
-              {renderItems(chocolatItems)}
-            </div>
-          </div>
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const BoissonsDetoxMenu = ({ section }: { section: MenuSection }) => {
-  const boissonsItems = section.leftItems?.filter(item => item.description === "boissons") || [];
-  const detoxItems = section.leftItems?.filter(item => item.description.startsWith("detox")) || [];
-
-  const renderBoissonsItems = (items: MenuItem[]) => (
-    <div className="flex flex-col gap-4">
-      {items.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
-        return (
-          <div
-            key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-          >
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-              >
-                {item.title}
-              </h3>
-              <span
-                className="text-lg sm:text-xl md:text-[20px]"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-              >
-                {item.price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-          </div>
-        );
-      })}
-    </div>
-  );
-
-  const renderDetoxItems = (items: MenuItem[]) => (
-    <div className="flex flex-col gap-5">
-      {items.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
-        const descParts = item.description.split("|");
-        const ingredients = descParts.length > 1 ? descParts[1] : "";
-        return (
-          <div
-            key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-          >
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-              >
-                {item.title}
-              </h3>
-              <span
-                className="text-lg sm:text-xl md:text-[20px]"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-              >
-                {item.price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-            {ingredients && (
+            {showDescription && item.extra && (
               <p className="text-sm mt-1 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-                {ingredients}
+                {item.extra}
               </p>
             )}
           </div>
@@ -2621,11 +2240,29 @@ const BoissonsDetoxMenu = ({ section }: { section: MenuSection }) => {
     </div>
   );
 
+  const renderSectionTitle = (title: string, subtitle: string) => (
+    <div className="text-center mb-5">
+      <h2
+        className="text-2xl sm:text-3xl md:text-[40px] tracking-widest"
+        style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.12em", fontWeight: 400 }}
+      >
+        {title}
+      </h2>
+      <span
+        className="block text-lg sm:text-xl md:text-[28px] -mt-1"
+        style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
+      >
+        {subtitle}
+      </span>
+      <div className="mx-auto mt-2" style={{ width: 40, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
+    </div>
+  );
+
   return (
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -2635,525 +2272,146 @@ const BoissonsDetoxMenu = ({ section }: { section: MenuSection }) => {
         className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
         style={{ maxWidth: 700 }}
       >
-        {/* BOISSONS FROIDES Section */}
-        <div className="mb-10 mt-6">
-          <div className="text-center mb-6">
-            <h1
-              className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-            >
-              BOISSONS
-            </h1>
-            <span
-              className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Froides
-            </span>
-            <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-          </div>
-          {renderBoissonsItems(boissonsItems)}
-        </div>
-
-        {/* DÉTOX Section */}
-        <div className="relative mb-8">
-          <div className="flex items-start">
-            {/* Detox jar illustration */}
-            <div className="hidden sm:block w-20 mr-4 opacity-50 mt-8">
-              <svg viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Mason jar */}
-                <rect x="10" y="20" width="40" height="60" rx="3" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Lid */}
-                <rect x="8" y="12" width="44" height="10" rx="2" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <line x1="8" y1="17" x2="52" y2="17" stroke="#c9b896" strokeWidth="0.8"/>
-                {/* Handle */}
-                <path d="M50 35 Q60 35 60 50 Q60 65 50 65" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Straw */}
-                <line x1="35" y1="5" x2="35" y2="40" stroke="#c9b896" strokeWidth="2"/>
-                {/* Lemon slice */}
-                <circle cx="25" cy="35" r="8" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                <line x1="25" y1="28" x2="25" y2="42" stroke="#c9b896" strokeWidth="0.5"/>
-                <line x1="18" y1="35" x2="32" y2="35" stroke="#c9b896" strokeWidth="0.5"/>
-                <line x1="20" y1="30" x2="30" y2="40" stroke="#c9b896" strokeWidth="0.5"/>
-                <line x1="30" y1="30" x2="20" y2="40" stroke="#c9b896" strokeWidth="0.5"/>
-                {/* Liquid line */}
-                <path d="M12 50 Q30 45 48 50" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.5"/>
-              </svg>
-            </div>
-            <div className="flex-1">
-              <div className="text-center mb-6">
-                <h1
-                  className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-                >
-                  DÉTOX
-                </h1>
-                <span
-                  className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-                  style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                >
-                  Menu
-                </span>
-                <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              </div>
-              {renderDetoxItems(detoxItems)}
-            </div>
-          </div>
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const FrappucinoSmoothiesMenu = ({ section }: { section: MenuSection }) => {
-  const frappucinoItems = section.leftItems?.filter(item => item.description === "frappucino") || [];
-  const smoothiesItems = section.leftItems?.filter(item => item.description === "smoothies") || [];
-
-  const renderItems = (items: MenuItem[]) => (
-    <div className="flex flex-col gap-4">
-      {items.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
-        return (
-          <div
-            key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-          >
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-              >
-                {item.title}
-              </h3>
-              <span
-                className="text-lg sm:text-xl md:text-[20px]"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-              >
-                {item.price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-          </div>
-        );
-      })}
-    </div>
-  );
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* FRAPPUCINO Section */}
-        <div className="relative mb-8 mt-6">
-          <div className="flex justify-between items-start">
-            <div className="flex-1">
-              <div className="text-center mb-6">
-                <h1
-                  className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-                >
-                  FRAPPUCINO
-                </h1>
-                <span
-                  className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-                  style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                >
-                  Menu
-                </span>
-                <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              </div>
-              {renderItems(frappucinoItems)}
-            </div>
-            {/* Frappucino glass illustration */}
-            <div className="hidden sm:block w-24 ml-4 opacity-50">
-              <svg viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Cup */}
-                <path d="M15 25 L18 80 L42 80 L45 25 Z" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Lid */}
-                <ellipse cx="30" cy="25" rx="15" ry="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <path d="M20 25 L20 20 Q30 15 40 20 L40 25" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                {/* Whipped cream */}
-                <path d="M22 20 Q25 10 30 12 Q35 8 38 18" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                <path d="M26 12 Q30 5 34 10" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                {/* Straw */}
-                <line x1="35" y1="8" x2="42" y2="-5" stroke="#c9b896" strokeWidth="2"/>
-                {/* Decorative lines */}
-                <path d="M20 45 Q30 40 40 45" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.5"/>
-                <path d="M19 60 Q30 55 41 60" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.5"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* SMOOTHIES Section */}
-        <div className="relative mb-8">
-          <div className="flex items-start">
-            {/* Smoothie cup illustration */}
-            <div className="hidden sm:block w-20 mr-4 opacity-50">
-              <svg viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Cup */}
-                <path d="M12 20 L16 70 L44 70 L48 20 Z" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                {/* Lid dome */}
-                <ellipse cx="30" cy="20" rx="18" ry="6" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <path d="M15 20 Q30 5 45 20" stroke="#c9b896" strokeWidth="1" fill="none"/>
-                {/* Straw */}
-                <line x1="30" y1="10" x2="30" y2="-5" stroke="#c9b896" strokeWidth="2"/>
-                {/* Content lines */}
-                <path d="M18 40 Q30 35 42 40" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.5"/>
-              </svg>
-            </div>
-            <div className="flex-1">
-              <div className="text-center mb-6">
-                <h1
-                  className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
-                >
-                  SMOOTHIES
-                </h1>
-                <span
-                  className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-                  style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                >
-                  Menu
-                </span>
-                <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              </div>
-              {renderItems(smoothiesItems)}
-            </div>
-          </div>
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const MojitoGraniteIceTeaMenu = ({ section }: { section: MenuSection }) => {
-  const mojitoItems = section.leftItems?.filter(item => item.description === "mojito") || [];
-  const graniteItems = section.leftItems?.filter(item => item.description === "granite") || [];
-  const iceteaItems = section.leftItems?.filter(item => item.description === "icetea") || [];
-
-  const renderItems = (items: MenuItem[]) => (
-    <div className="flex flex-col gap-4">
-      {items.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
-        return (
-          <div
-            key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-          >
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-lg sm:text-xl md:text-[22px] tracking-wider"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
-              >
-                {item.title}
-              </h3>
-              <span
-                className="text-lg sm:text-xl md:text-[20px]"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-              >
-                {item.price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-          </div>
-        );
-      })}
-    </div>
-  );
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* MOJITO Section */}
-        <div className="relative mb-8 mt-6">
-          <div className="flex justify-between items-start">
-            <div className="flex-1">
-              <div className="text-center mb-6">
-                <h1
-                  className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.18em", fontWeight: 400, marginBottom: 0 }}
-                >
-                  MOJITO
-                </h1>
-                <span
-                  className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-                  style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                >
-                  Menu
-                </span>
-                <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              </div>
-              {renderItems(mojitoItems)}
-            </div>
-            {/* Mojito glass illustration */}
-            <div className="hidden sm:block w-24 ml-4 opacity-50">
-              <svg viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 20 L20 85 L40 85 L45 20 Z" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <ellipse cx="30" cy="20" rx="15" ry="5" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <line x1="25" y1="15" x2="22" y2="5" stroke="#c9b896" strokeWidth="1"/>
-                <line x1="35" y1="15" x2="40" y2="3" stroke="#c9b896" strokeWidth="1"/>
-                <ellipse cx="22" cy="5" rx="3" ry="2" stroke="#c9b896" strokeWidth="0.8" fill="none"/>
-                <path d="M20 40 Q30 35 40 40" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.6"/>
-                <path d="M21 55 Q30 50 39 55" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.6"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* GRANITE Section */}
-        <div className="relative mb-8">
-          <div className="flex items-start">
-            {/* Granite mug illustration */}
-            <div className="hidden sm:block w-20 mr-4 opacity-50">
-              <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 15 L10 55 Q10 60 15 60 L40 60 Q45 60 45 55 L45 15" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <ellipse cx="27.5" cy="15" rx="17.5" ry="6" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <path d="M45 25 Q55 25 55 35 Q55 45 45 45" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-                <path d="M15 30 Q27 25 40 30" stroke="#c9b896" strokeWidth="0.8" fill="none" opacity="0.5"/>
-              </svg>
-            </div>
-            <div className="flex-1">
-              <div className="text-center mb-6">
-                <h1
-                  className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.18em", fontWeight: 400, marginBottom: 0 }}
-                >
-                  GRANITE
-                </h1>
-                <span
-                  className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-                  style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-                >
-                  Menu
-                </span>
-                <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-              </div>
-              {renderItems(graniteItems)}
-            </div>
-          </div>
-        </div>
-
-        {/* ICETEA Section */}
-        <div className="mb-8">
-          <div className="text-center mb-6">
-            <h1
-              className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.18em", fontWeight: 400, marginBottom: 0 }}
-            >
-              ICETEA
-            </h1>
-            <span
-              className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Menu
-            </span>
-            <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-          </div>
-          {renderItems(iceteaItems)}
-        </div>
-
-        <div className="pb-2" />
-      </div>
-    </div>
-  );
-};
-
-const FreshJuiceMenu = ({ section }: { section: MenuSection }) => {
-  const items = section.leftItems || [];
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* FRESH JUICE Title */}
-        <div className="text-center mb-10 mt-8">
+        {/* Main BOISSONS Title */}
+        <div className="text-center mb-8 mt-6">
           <h1
-            className="text-3xl sm:text-4xl md:text-[64px] tracking-widest"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.18em", fontWeight: 400, marginBottom: 0 }}
+            className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
           >
-            FRESH JUICE
+            BOISSONS
           </h1>
           <span
-            className="block text-2xl sm:text-3xl md:text-[42px] -mt-1"
+            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
             style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
           >
             Menu
           </span>
-          <div className="mx-auto mt-4" style={{ width: 60, borderTop: "1px solid rgba(201,184,150,0.6)" }} />
+          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(201,184,150,0.5)" }} />
         </div>
 
-        {/* Items in alternating left/right pattern */}
-        <div className="flex flex-col gap-5">
-          {items.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
-              >
+        {/* CAFÉS CLASSIQUES Section */}
+        <div className="mb-8">
+          {renderSectionTitle("CAFÉS", "Classiques")}
+          {/* Header with NESPRESSO label for first items */}
+          <div className="flex justify-end mb-2 px-2">
+            <span
+              className="text-sm sm:text-base tracking-wider"
+              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.1em" }}
+            >
+              NESPRESSO
+            </span>
+          </div>
+          {/* Items with Nespresso prices */}
+          <div className="flex flex-col gap-3 mb-4">
+            {cafesWithNespresso.map((item, idx) => (
+              <div key={idx} className="w-full">
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-lg sm:text-xl md:text-[24px] tracking-wider"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.1em" }}
+                    className="text-base sm:text-lg md:text-[18px] tracking-wider flex-1"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px]"
+                    className="text-base sm:text-lg md:text-[18px] w-20 text-center"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
                   >
                     {item.price}
                   </span>
+                  <span
+                    className="text-base sm:text-lg md:text-[18px] w-20 text-right"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
+                  >
+                    {item.extra}
+                  </span>
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.4)" }} />
-                {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#c9b896", fontFamily: "'LaLuxes', serif" }}>
-                    {item.description}
-                  </p>
-                )}
               </div>
-            );
-          })}
+            ))}
+          </div>
+          {/* Items without Nespresso */}
+          {renderItems(cafesWithoutNespresso)}
         </div>
 
-        <div className="pb-12" />
-      </div>
-    </div>
-  );
-};
-
-const MatchaMenu = ({ section }: { section: MenuSection }) => {
-  const items = section.leftItems || [];
-
-  return (
-    <div
-      className="min-h-fit w-screen flex items-start justify-center"
-      style={{
-        backgroundImage: "url('/coffee/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "scroll"
-      }}
-    >
-      <div
-        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
-        style={{ maxWidth: 700 }}
-      >
-        {/* Border frame */}
-        <div className="flex-1 border border-[#c9b896] p-6 sm:p-10 relative" style={{ borderWidth: 2 }}>
-          
-          {/* MATCHA Title */}
-          <div className="text-center mb-10 mt-4">
-            <h1
-              className="text-4xl sm:text-5xl md:text-[72px] tracking-widest"
-              style={{ fontFamily: "'LaLuxes', serif", color: "#c9b896", letterSpacing: "0.2em", fontWeight: 400, marginBottom: 0 }}
-            >
-              MATCHA
-            </h1>
-            <span
-              className="block text-2xl sm:text-3xl md:text-[42px] -mt-1"
-              style={{ fontFamily: "'Tangerine', cursive", color: "#c9782b", letterSpacing: "0.05em" }}
-            >
-              Menu
-            </span>
-          </div>
-
-          {/* Items in alternating left/right pattern */}
-          <div className="flex flex-col gap-6">
-            {items.map((item, idx) => {
-              const isLeft = idx % 2 === 0;
-              return (
-                <div
-                  key={idx}
-                  className={`w-full sm:w-[70%] ${isLeft ? '' : 'sm:ml-auto'}`}
-                >
-                  <div className="flex justify-between items-center px-2">
-                    <h3
-                      className="text-lg sm:text-xl md:text-[26px] tracking-wider"
-                      style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6", letterSpacing: "0.12em" }}
-                    >
-                      {item.title}
-                    </h3>
-                    <span
-                      className="text-lg sm:text-xl md:text-[24px]"
-                      style={{ fontFamily: "'LaLuxes', serif", color: "#efe8d6" }}
-                    >
-                      {item.price}
-                    </span>
-                  </div>
-                  <div className="mt-2" style={{ borderTop: "1px solid rgba(201,184,150,0.5)" }} />
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Matcha illustration at bottom */}
-          <div className="flex justify-center mt-10 mb-4">
-            <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-48 sm:w-64 opacity-60">
-              {/* Matcha bowl */}
-              <ellipse cx="50" cy="55" rx="35" ry="12" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-              <path d="M15 55 Q15 30 50 25 Q85 30 85 55" stroke="#c9b896" strokeWidth="1.5" fill="none"/>
-              <ellipse cx="50" cy="25" rx="20" ry="6" stroke="#c9b896" strokeWidth="1" fill="none" opacity="0.5"/>
-              
-              {/* Chasen (whisk) */}
-              <line x1="110" y1="65" x2="110" y2="20" stroke="#c9b896" strokeWidth="1.5"/>
-              <path d="M100 20 Q105 5 110 8 Q115 5 120 20" stroke="#c9b896" strokeWidth="1" fill="none"/>
-              <line x1="103" y1="20" x2="103" y2="10" stroke="#c9b896" strokeWidth="0.8"/>
-              <line x1="106" y1="20" x2="106" y2="8" stroke="#c9b896" strokeWidth="0.8"/>
-              <line x1="110" y1="20" x2="110" y2="6" stroke="#c9b896" strokeWidth="0.8"/>
-              <line x1="114" y1="20" x2="114" y2="8" stroke="#c9b896" strokeWidth="0.8"/>
-              <line x1="117" y1="20" x2="117" y2="10" stroke="#c9b896" strokeWidth="0.8"/>
-              
-              {/* Chawan (small cups) */}
-              <ellipse cx="150" cy="60" rx="12" ry="5" stroke="#c9b896" strokeWidth="1.2" fill="none"/>
-              <path d="M138 60 Q138 45 150 42 Q162 45 162 60" stroke="#c9b896" strokeWidth="1.2" fill="none"/>
-              
-              <ellipse cx="175" cy="60" rx="10" ry="4" stroke="#c9b896" strokeWidth="1.2" fill="none"/>
-              <path d="M165 60 Q165 48 175 45 Q185 48 185 60" stroke="#c9b896" strokeWidth="1.2" fill="none"/>
-              
-              {/* Chashaku (spoon) */}
-              <path d="M20 72 Q50 68 80 72" stroke="#c9b896" strokeWidth="1.2" fill="none"/>
-              <ellipse cx="80" cy="72" rx="4" ry="2" stroke="#c9b896" strokeWidth="1" fill="none"/>
-            </svg>
-          </div>
+        {/* CAFÉS LATTE Section */}
+        <div className="mb-8">
+          {renderSectionTitle("CAFÉS", "Latte")}
+          {renderItems(latteItems)}
         </div>
+
+        {/* CAFÉS GLACÉS Section */}
+        <div className="mb-8">
+          {renderSectionTitle("CAFÉS", "Glacés")}
+          {renderItems(glacesItems)}
+        </div>
+
+        {/* THÉ Section */}
+        <div className="mb-8">
+          {renderSectionTitle("THÉ", "Menu")}
+          {renderItems(theItems)}
+        </div>
+
+        {/* CHOCOLAT CHAUD Section */}
+        <div className="mb-8">
+          {renderSectionTitle("CHOCOLAT", "Chaud")}
+          {renderItems(chocolatItems)}
+        </div>
+
+        {/* BOISSONS FROIDES Section */}
+        <div className="mb-8">
+          {renderSectionTitle("BOISSONS", "Froides")}
+          {renderItems(boissonsItems)}
+        </div>
+
+        {/* DÉTOX Section */}
+        <div className="mb-8">
+          {renderSectionTitle("DÉTOX", "Menu")}
+          {renderItems(detoxItems, true)}
+        </div>
+
+        {/* FRAPPUCINO Section */}
+        <div className="mb-8">
+          {renderSectionTitle("FRAPPUCINO", "Menu")}
+          {renderItems(frappucinoItems)}
+        </div>
+
+        {/* SMOOTHIES Section */}
+        <div className="mb-8">
+          {renderSectionTitle("SMOOTHIES", "Menu")}
+          {renderItems(smoothiesItems)}
+        </div>
+
+        {/* MOJITO Section */}
+        <div className="mb-8">
+          {renderSectionTitle("MOJITO", "Menu")}
+          {renderItems(mojitoItems)}
+        </div>
+
+        {/* GRANITE Section */}
+        <div className="mb-8">
+          {renderSectionTitle("GRANITE", "Menu")}
+          {renderItems(graniteItems)}
+        </div>
+
+        {/* ICETEA Section */}
+        <div className="mb-8">
+          {renderSectionTitle("ICETEA", "Menu")}
+          {renderItems(iceteaItems)}
+        </div>
+
+        {/* FRESH JUICE Section */}
+        <div className="mb-8">
+          {renderSectionTitle("FRESH JUICE", "Menu")}
+          {renderItems(freshJuiceItems, true)}
+        </div>
+
+        {/* MATCHA Section */}
+        <div className="mb-8">
+          {renderSectionTitle("MATCHA", "Menu")}
+          {renderItems(matchaItems)}
+        </div>
+
+        <div className="pb-4" />
       </div>
     </div>
   );
@@ -3167,7 +2425,7 @@ const ChichaMenu = ({ section }: { section: MenuSection }) => {
     <div
       className="min-h-fit w-screen flex items-start justify-center"
       style={{
-        backgroundImage: "url('/coffee/bg.png')",
+        backgroundImage: "url('/coffee/boissons-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll"
@@ -3307,9 +2565,9 @@ const TwoColumnMenu = ({ section, showBackground = true }: { section: MenuSectio
   const frame = (
     <div
       className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8"
-      style={{ maxWidth: 1200, backgroundImage: "url('/coffee/bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ maxWidth: 1200, backgroundImage: "url('/coffee/boissons-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
-      <div className="flex-1 border border-[#c9b896] p-8 relative" style={{ borderStyle: "dashed" }}>
+      <div className="flex-1 border border-[#c9b896] p-8 relative">
         {/* Title */}
         <div className="text-center relative">
           <h1
@@ -3377,7 +2635,7 @@ const TwoColumnMenu = ({ section, showBackground = true }: { section: MenuSectio
       <div
         className="min-h-fit w-screen flex items-start justify-center"
         style={{
-          backgroundImage: "url('/coffee/bg.png')",
+          backgroundImage: "url('/coffee/boissons-bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "scroll"
@@ -3461,7 +2719,7 @@ export default function MenuGallery() {
 
       <main>
         {/* Hero header */}
-        <header id="top" className="w-full flex items-center justify-center" style={{ backgroundImage: "url('/coffee/bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <header id="top" className="w-full flex items-center justify-center" style={{ backgroundImage: "url('/coffee/boissons-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="w-[92vw] sm:w-[88vw] max-w-[1200px] text-center py-16 sm:py-28">
             <h2 style={{ fontFamily: "'LaLuxes', serif", color: '#efe8d6', fontSize: 'clamp(48px, 8vw, 160px)', letterSpacing: '0.22em', margin: 0 }}>Menu</h2>
             <p style={{ fontFamily: "'LaLuxes', serif", color: '#c9782b', fontSize: 'clamp(16px, 2.2vw, 28px)', marginTop: 8 }}>Savourez chaque instant</p>
@@ -3472,7 +2730,7 @@ export default function MenuGallery() {
         <div 
           className="w-full pt-2 sm:pt-4 px-2 sm:px-6 sticky top-0 z-40"
           style={{ 
-            backgroundImage: "url('/coffee/bg.png')",
+            backgroundImage: "url('/coffee/boissons-bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}
@@ -3514,7 +2772,7 @@ export default function MenuGallery() {
         <div className="flex flex-col items-center gap-10 py-8">
           {(source as MenuSection[]).map((s) => (
             <section id={s.id} key={s.id} className="w-full flex justify-center" style={{ scrollMarginTop: '80px' }}>
-              {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "matcha" ? <MatchaMenu section={s} /> : s.id === "fresh-juice" ? <FreshJuiceMenu section={s} /> : s.id === "mojito-granite-icetea" ? <MojitoGraniteIceTeaMenu section={s} /> : s.id === "frappucino-smoothies" ? <FrappucinoSmoothiesMenu section={s} /> : s.id === "boissons-detox" ? <BoissonsDetoxMenu section={s} /> : s.id === "the-chocolat" ? <TheChocolatMenu section={s} /> : s.id === "cafes-latte-glaces" ? <CafesLatteGlacesMenu section={s} /> : s.id === "cafes-menu" ? <CafesMenu section={s} /> : s.id === "pizzas-2" ? <PizzasGourmetMenu section={s} /> : s.id === "pizzas-1" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres-crepes" ? <GaufresCrepsMenu section={s} /> : s.id === "crepes-salees" ? <CrepesSaleesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants-brioche-salee" ? <CroissantsBriocheSaleeMenu section={s} /> : s.id === "croissants-sales" ? <CroissantsSalesMenu section={s} /> : s.id === "toasts-2" ? <Toasts2Menu section={s} /> : s.id === "toasts" ? <ToastsMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
+              {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "boissons" ? <BoissonsMenu section={s} /> : s.id === "pizzas" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres" ? <GaufresMenu section={s} /> : s.id === "crepes" ? <CrepesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants" ? <CroissantsMenu section={s} /> : s.id === "toasts" ? <ToastsCombinedMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
             </section>
           ))}
         </div>
