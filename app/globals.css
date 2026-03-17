@@ -2,11 +2,7 @@
 
 :root {
   --background: #0f1e12;
-<<<<<<< HEAD
   --foreground: #eedab7;
-=======
-  --foreground: #f0e3c2;
->>>>>>> 244f724d3d96590bc9fc08d8f77f2c9f7cb5191e
 }
 
 @theme inline {
@@ -31,14 +27,9 @@ body {
 
 /* Responsive text scaling */
 @media (max-width: 640px) {
-<<<<<<< HEAD
-
   h1,
   h2,
   h3 {
-=======
-  h1, h2, h3 {
->>>>>>> 244f724d3d96590bc9fc08d8f77f2c9f7cb5191e
     word-break: break-word;
   }
 }
@@ -51,8 +42,4 @@ body {
 main {
   overflow-x: hidden;
   width: 100%;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 244f724d3d96590bc9fc08d8f77f2c9f7cb5191e
