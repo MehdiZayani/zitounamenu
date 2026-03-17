@@ -1,0 +1,599 @@
+{
+  "menu_page-0001.jpg": [
+    {
+      "title": "| RAPIDE",
+      "price": "12,800",
+      "description": "| | | Mini omelette ou oeuf brouillé, eau 0,51 | | | | | | |"
+    },
+    {
+      "title": "| BOWL GRANOIA",
+      "price": "15,900",
+      "description": "| Ps Ts | | Yaourt, granola, fruits secs, fruits | | y :"
+    },
+    {
+      "title": "| Es OR",
+      "price": "21,600",
+      "description": "i | | Mini crépe, mini gaufre, mini bol de granola, | | fondant, mini brioche perdu , nutella, speculoos | | | LA | | LE SALE 200 | Mini omelette, toast fromage et tomate, | assiette de charcuterie et fromage | | |"
+    },
+    {
+      "title": "HEE PERK",
+      "price": "23,200",
+      "description": "| | | Turkish eggs, assiette de charcuterie | |"
+    },
+    {
+      "title": "| LE TUNISIEN",
+      "price": "22,500",
+      "description": "| Ojja, mini omelette a la tunisienne,toast a la | tunisienne, patisserie du jour | | | FR | | LE NORVEGIEN = 27500 = P) | | ) > i i | Saumon fumé, oeuf brouillé, avocat, fromage x) | blanc, salade | ; | | lJ) LITAILEN 25000 — ga, LITALEN 25000 TO breasaola, oeuf brouillé, champignon, | | 2 avocat, fromage blanc, salade | i |"
+    },
+    {
+      "title": "| ENGILSH",
+      "price": "20,900",
+      "description": "ee a a — | Chacuterie, fromage blanc, 2 ceufs au plat, | champignons et tomates sautés | EE ———— ey"
+    }
+  ],
+  "menu_page-0002.jpg": [
+    {
+      "title": "| CIASSIQUE",
+      "price": "14,900",
+      "description": "| OEUF BROUIILÉ 16200"
+    },
+    {
+      "title": "| CON@RDE",
+      "price": "16,200",
+      "description": "| TUNISIENNE 19000 _"
+    },
+    {
+      "title": "| BURRATA TOMATE ENFITE",
+      "price": "19,600",
+      "description": "| POULET FUME 18000 |"
+    },
+    {
+      "title": "| CHAMPIGNONS",
+      "price": "18,900",
+      "description": "| CHAMPIGNONS TRUFFE 23000 |"
+    },
+    {
+      "title": "| JAMBON FUMÉ",
+      "price": "21,600",
+      "description": ""
+    }
+  ],
+  "menu_page-0003.jpg": [
+    {
+      "title": "CRUNCHY CHICKEN CESAR",
+      "price": "22,600",
+      "description": "| | | sauce fromage, poulet pané, parmesan, laitue | | | | |"
+    },
+    {
+      "title": "| DWEET CHILL SHRIMP",
+      "price": "29,800",
+      "description": "| | | sauce fromage, crevette pané et enrobé de sweet chili sauce , roquette | | | | |"
+    },
+    {
+      "title": "| SPICY SHRIMP",
+      "price": "28,800",
+      "description": "i IE 0 00 A | | sauce fromage, crevette sauté au paprika, roquette | | | | | N |"
+    },
+    {
+      "title": "| Bb CREME DE THON",
+      "price": "18,000",
+      "description": "A A — | | 7 SN ail confit crème de thon, persil, oeuf poché | IN STEN,"
+    },
+    {
+      "title": "| té À FETA",
+      "price": "14,800",
+      "description": "LE \\& Lane de. TLC TEEN \\ SA SSE ; + 12 “NA 5 : | \\ ( \\ Sf TM Ail confit, légumes grillé, feta, œuf poché | NEE) | CET"
+    },
+    {
+      "title": "| S— [TT AILE RS",
+      "price": "18,900",
+      "description": "| | | sauce fromage, bresaola, pesto, roquette, œuf poché | | |"
+    },
+    {
+      "title": "| BURRATA",
+      "price": "21,900",
+      "description": "| sauce fromage, burrata, pesto, roquette œuf poché | | | | | |"
+    },
+    {
+      "title": "| BURRA | À BRESAOLA",
+      "price": "22,800",
+      "description": "| | | sauce fromage ,burrata,bresaola, pesto, roquette ,balsamique | | | | | Less Ts si)"
+    }
+  ],
+  "menu_page-0004.jpg": [
+    {
+      "title": "| JAMBON FUME",
+      "price": "15,800",
+      "description": "| sauce fromage, jambon fumé, emmental |"
+    },
+    {
+      "title": "| POULET FUME",
+      "price": "17,200",
+      "description": "| sauce fromage, poulet fumé, emmental, pesto |"
+    },
+    {
+      "title": "| BRESAOIA",
+      "price": "17,200",
+      "description": "| sauce fromage, Bresaola, emmental, pesto, balsamique | | SAUMON 21800 | | sauce fromage, avocat, saumon | | Oeuf:15 dt Saumon fumé : 8 dt | | Emmental:3 dt Avocat : 5 dt | | Champignons sautés : 4 dt Burrata : 6 dt | | Sauce fromage : 2 dt Croissant : 3 dt | | Feta:4dt Pain au chocolat : 3,5 dt | | Truffe : 6 dt Frites : 4,5 dt |"
+    }
+  ],
+  "menu_page-0005.jpg": [
+    {
+      "title": "SPÉCUIOOS",
+      "price": "13,000",
+      "description": "Neo ee"
+    },
+    {
+      "title": "BRESAOIA",
+      "price": "14,900",
+      "description": "SAUMON FUME = 19900"
+    }
+  ],
+  "menu_page-0006.jpg": [
+    {
+      "title": "| BANANE CARAMEL NOIX",
+      "price": "16,500",
+      "description": ""
+    },
+    {
+      "title": "| FRAMBOISE CARAMEL",
+      "price": "17,900",
+      "description": "| PISTACHE FRAMBOISE 19900"
+    },
+    {
+      "title": "| NUTEILA NOISETTE",
+      "price": "16,900",
+      "description": ""
+    },
+    {
+      "title": "| NUTEILA BANANE",
+      "price": "17,800",
+      "description": ""
+    },
+    {
+      "title": "| NUTEILA FRAMBOISE",
+      "price": "17,900",
+      "description": "OUFRASE 0"
+    }
+  ],
+  "menu_page-0007.jpg": [
+    {
+      "title": "| THON",
+      "price": "15,800",
+      "description": "JAMBON FUMÉ 15800 | | POULET ÉPICÉ 17900 SAUMON FUMÉ 23800 |"
+    },
+    {
+      "title": "| RIGITA EPINARD",
+      "price": "14,600",
+      "description": "CHAMPIGNONS 16800 | | TRUFFES |"
+    },
+    {
+      "title": "| TUNISIENNE",
+      "price": "16,500",
+      "description": "| Sauce à I'ail harissa,thon,oeuf,piment de cayenne olive | GOURMANDE 17400 | | FOURRÉE POULET 21800 | | CHAMPIGNONS | | Poulet, champignons, mozzarella, sauce blanche |"
+    }
+  ],
+  "menu_page-0008.jpg": [
+    {
+      "title": "| BRESAOIA",
+      "price": "15,700",
+      "description": "CREPES | GAUFRES"
+    }
+  ],
+  "menu_page-0009.jpg": [
+    {
+      "title": "| FROMAGE",
+      "price": "13,900",
+      "description": "| THON 17900 |"
+    },
+    {
+      "title": "| JAMBON FUMÉ",
+      "price": "17,900",
+      "description": ""
+    },
+    {
+      "title": "BRESAOLA",
+      "price": "19,500",
+      "description": ""
+    },
+    {
+      "title": "| ÉPINARD FETA",
+      "price": "19,800",
+      "description": ""
+    },
+    {
+      "title": "| LEGERE AUX LEGUMES",
+      "price": "16,900",
+      "description": ""
+    },
+    {
+      "title": "| SAUMON FUMÉ",
+      "price": "25,800",
+      "description": "GOURMANDE 20900 |"
+    }
+  ],
+  "menu_page-0010.jpg": [
+    {
+      "title": "| SALADE CÉSAR",
+      "price": "21,200",
+      "description": "| Salade, poulet grillé, parmesan, croutons, noix | | SAIADE POULET FUMÉ 21900 | | Salade, poulet fumé, bresaola, croutons |"
+    },
+    {
+      "title": "| CAMEMBERT PANÉ",
+      "price": "20,200",
+      "description": "| Roquette, tomate, camembert pané, date, noix, balsamique, miel | BURRATA 22400 | | Roquette, tomate, noix, burrata, bresaola, pesto, balsamique | | CREVETTES PANÉES 32800 | | Roquette, crevettes panées aux amandes, sauce aigre douce | 2159 % DAY Shes | AC —"
+    }
+  ],
+  "menu_page-0011.jpg": [
+    {
+      "title": "| CARBONARA",
+      "price": "23,800",
+      "description": "| poulet fumé, jaune d'oeuf coulant | PUTTANESCA 21800 |"
+    },
+    {
+      "title": "| SAUMON FUMÉ",
+      "price": "30,800",
+      "description": "| Sauce rosée | POULET PESTO 23900 |"
+    },
+    {
+      "title": "| POULET CHAMPIGNONS",
+      "price": "23,900",
+      "description": "| Sauce rosée ou blanche | AGILO , OILO & GAMBAS 33200 |"
+    },
+    {
+      "title": "| GAMBARI",
+      "price": "34,900",
+      "description": "| Crevettes, courg ettes | | CREVFITES CHAMPIGNONS 35600 | | Sauce rosée |"
+    }
+  ],
+  "menu_page-0012.jpg": [
+    {
+      "title": "| BOIOGNAISE",
+      "price": "26,400",
+      "description": "| LASAGNE 27800 — | CANNEILONI RIGTTA 21600 | EPINARD A. |"
+    },
+    {
+      "title": "| CHAMPIGNONS TRUFFÉS",
+      "price": "34,800",
+      "description": ""
+    },
+    {
+      "title": "| POULET FUMÉ",
+      "price": "29,800",
+      "description": ""
+    },
+    {
+      "title": "| CREVETTES",
+      "price": "38,900",
+      "description": "GC ae 5 | SR | > a Cac |"
+    }
+  ],
+  "menu_page-0013.jpg": [
+    {
+      "title": "| ESCAIOPE DE",
+      "price": "22,900",
+      "description": "| POULET GRIILEE |"
+    },
+    {
+      "title": "ESCAIOPE DE POULET",
+      "price": "24,800",
+      "description": "| PANE AUX AMANDES |"
+    },
+    {
+      "title": "| ESCAIOPE DE POULET",
+      "price": "26,600",
+      "description": "| SAUCE CHAMPIGNONS |"
+    },
+    {
+      "title": "| POULET PARMIGIANA",
+      "price": "28,800",
+      "description": "| (Escalope de poulet pané, sauce tomate, mozzarella gratiné) |"
+    },
+    {
+      "title": "FILET DE BOEUF",
+      "price": "46,200",
+      "description": "SAUCE AUX CHOIX | | Champignons, truffe, poivre, fromage, chimichurri | | FILET DE IOUP 32000 | SAUCE CITRON |"
+    }
+  ],
+  "menu_page-0014.jpg": [
+    {
+      "title": "| BEEF BOWL",
+      "price": "44,800",
+      "description": "| Riz sauté avec du soja , filet de boeuf | | laqué au soja, tomates cerise,parmesan |"
+    },
+    {
+      "title": "| CHICKEN LEMON BOWL",
+      "price": "20,200",
+      "description": "| Riz sauté au citron, poulet grillé, | | légumes |"
+    },
+    {
+      "title": "| TERIYAKI POULET",
+      "price": "23,200",
+      "description": "| Riz sauté avec du soja, émincé de poulet | | sauce teriyaki, légumes | | PROTEIN: 21900 | | Riz, poulet grillé, 2 oeufs dur, avocat |"
+    }
+  ],
+  "menu_page-0015.jpg": [
+    {
+      "title": "| FRIED CHICKEN",
+      "price": "17,900",
+      "description": "| roquette, basilic |"
+    },
+    {
+      "title": "BAZON",
+      "price": "17,900",
+      "description": "| bresaola, emmental, roquette |"
+    },
+    {
+      "title": "| CRISPY OIGNON BEEF",
+      "price": "19,900",
+      "description": "| oignons frits, roquette |"
+    },
+    {
+      "title": "TASTY BEEF",
+      "price": "19,900",
+      "description": "| camembert, roquette |"
+    },
+    {
+      "title": "| SANDWICH THON",
+      "price": "14,900",
+      "description": ""
+    }
+  ],
+  "menu_page-0016.jpg": [
+    {
+      "title": "| MARGHERITA",
+      "price": "18,900",
+      "description": "| Sauce tomate, mozzarella, basilic | VEGETARIANA 21800 | | Sauce tomate, mozzarella, légumes grillés |"
+    },
+    {
+      "title": "| TONNO",
+      "price": "23,900",
+      "description": "| Sauce tomate, mozzarella, thon |"
+    },
+    {
+      "title": "NAPOILTANA",
+      "price": "21,900",
+      "description": "| Sauce tomate, mozzarella,anchois, capres, olives noirs, origan |"
+    },
+    {
+      "title": "| REGINA",
+      "price": "24,800",
+      "description": "| Sauce tomate, mozzarella, jambon fumé, champignons | | POULET 23900 | Sauce tomate, mozzarella, poulet |"
+    }
+  ],
+  "menu_page-0017.jpg": [
+    {
+      "title": "| PEPPERONI",
+      "price": "21,200",
+      "description": "| QUATTRO FORMAGGI 28600 | | parmesan, emmental |"
+    },
+    {
+      "title": "| BURRATA",
+      "price": "26,900",
+      "description": "| balsamique |"
+    },
+    {
+      "title": "| BRESAOIA",
+      "price": "26,900",
+      "description": ""
+    },
+    {
+      "title": "| TRUFA E FUNGHI",
+      "price": "28,400",
+      "description": "| 5 9% | pe) à RU ed | Sr Gé | | SHR R | VOS | |"
+    }
+  ],
+  "menu_page-0018.jpg": [
+    {
+      "title": "| EXPRESS",
+      "price": "3,900",
+      "description": ""
+    },
+    {
+      "title": "| AMERICAIN",
+      "price": "4,200",
+      "description": ""
+    },
+    {
+      "title": "| CAPPUCIN",
+      "price": "4,300",
+      "description": ""
+    },
+    {
+      "title": "| CAFÉ CRÈME",
+      "price": "4,600",
+      "description": "| GRAND TASSE 4500 = GRAND CREME 4800 |"
+    },
+    {
+      "title": "| CAPPUCINO",
+      "price": "5,700",
+      "description": "AFFQGATO 6900 | | >) EEE |"
+    },
+    {
+      "title": "| GRAND",
+      "price": "10,900",
+      "description": "| AFFŒATO |"
+    }
+  ],
+  "menu_page-0019.jpg": [
+    {
+      "title": "| PISTACHE",
+      "price": "14,600",
+      "description": ""
+    },
+    {
+      "title": "NOISFTTE",
+      "price": "13,400",
+      "description": "NUTEILA / CARAMEL / 12700 | | BEURRE DE CACAHUETE / SPEECUIOS | CAFÉS | AES | HF |"
+    },
+    {
+      "title": "BEURRE DE",
+      "price": "10,200",
+      "description": "| CACAHUETE |"
+    },
+    {
+      "title": "| CARAMEL",
+      "price": "13,400",
+      "description": ""
+    },
+    {
+      "title": "| NUTEILA",
+      "price": "13,400",
+      "description": ""
+    },
+    {
+      "title": "| NOISETTE",
+      "price": "13,400",
+      "description": ""
+    },
+    {
+      "title": "PISTACHE",
+      "price": "15,800",
+      "description": ""
+    }
+  ],
+  "menu_page-0020.jpg": [
+    {
+      "title": "| THÉ AUX AMANDES",
+      "price": "8,900",
+      "description": "| THÉ AUX PIGNONS 13900 | | 2 CH@O 7500 OÙ CH@O CHANTILY 8500 | | |"
+    }
+  ],
+  "menu_page-0021.jpg": [
+    {
+      "title": "| GARCI",
+      "price": "3,900",
+      "description": ""
+    },
+    {
+      "title": "| SODA",
+      "price": "4,600",
+      "description": "| BOISSONS 9500 | | ÉNERGÉTIQUES | | ; | DETOX | DETOX CIASSIQUE 9800 | Menthe, citron, concombre | | DÉTOX IMMUNITE 12800 | | Orange, carotte, citron, gingembre |"
+    },
+    {
+      "title": "| DETOX ÉNERGÉTIQUE",
+      "price": "13,900",
+      "description": "| Carotte, betrave, orange, citron, menthe, gingembre |"
+    }
+  ],
+  "menu_page-0022.jpg": [
+    {
+      "title": "| BEURRE DE",
+      "price": "13,900",
+      "description": "| CACAHOUETTE =} |"
+    },
+    {
+      "title": "| NOISETTE",
+      "price": "16,800",
+      "description": ""
+    },
+    {
+      "title": "NUTELLA",
+      "price": "16,800",
+      "description": ""
+    },
+    {
+      "title": "SPEECUIOSS",
+      "price": "16,800",
+      "description": ""
+    },
+    {
+      "title": "CARMEL",
+      "price": "16,800",
+      "description": "| y SMOQTHES I ="
+    },
+    {
+      "title": "& FRUITS ROUGE",
+      "price": "16,800",
+      "description": ""
+    },
+    {
+      "title": "| FRAISE",
+      "price": "16,800",
+      "description": "PÊCHE BANANE 16800 |"
+    },
+    {
+      "title": "| PINAGIADA",
+      "price": "16,800",
+      "description": ""
+    },
+    {
+      "title": "EXOTIC",
+      "price": "16,800",
+      "description": ""
+    }
+  ],
+  "menu_page-0023.jpg": [
+    {
+      "title": "MOJITO ENERGIE",
+      "price": "16,900",
+      "description": "GRANITE <A."
+    },
+    {
+      "title": "=> CITRON",
+      "price": "9,900",
+      "description": ""
+    },
+    {
+      "title": "FRAISE",
+      "price": "1,900",
+      "description": ""
+    },
+    {
+      "title": "PINAGIADA",
+      "price": "13,900",
+      "description": "ICETEA"
+    },
+    {
+      "title": "| TEA FRAMBOISE",
+      "price": "9,700",
+      "description": ""
+    },
+    {
+      "title": "TEA PÊCHE",
+      "price": "9,700",
+      "description": ""
+    }
+  ],
+  "menu_page-0024.jpg": [
+    {
+      "title": "| CITRONNADE",
+      "price": "7,800",
+      "description": "| JUS D'ORANGE 3200 |"
+    },
+    {
+      "title": "| CITRONNADE",
+      "price": "10,800",
+      "description": "| AUX AMANDES | FRAISE 9200 |"
+    },
+    {
+      "title": "| BANANE",
+      "price": "9,800",
+      "description": "| DATTES BANANE: 12200 | | TRIPPLE D'AMOUR 15600 | | Banane, dattes, fruits secs, miel |"
+    },
+    {
+      "title": "| MAHBOUL ZITOUNA",
+      "price": "18,900",
+      "description": "| Jus de fruits, fruits secs, boule de glace |"
+    }
+  ],
+  "menu_page-0025.jpg": [
+    {
+      "title": "CARAMEL",
+      "price": "15,800",
+      "description": "c'e A"
+    }
+  ],
+  "menu_page-0026.jpg": [
+    {
+      "title": "RAISIN",
+      "price": "12,000",
+      "description": "| SJHA RAISIN MENTHE = 12000 5"
+    },
+    {
+      "title": "LOVE",
+      "price": "15,000",
+      "description": "CHIKH MONEY 15000 “Y"
+    }
+  ]
+}
