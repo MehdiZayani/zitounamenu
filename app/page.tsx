@@ -421,17 +421,17 @@ const PatesMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -439,7 +439,7 @@ const PatesMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -495,17 +495,17 @@ const SaladesMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -513,7 +513,7 @@ const SaladesMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -595,17 +595,17 @@ const OmeletteMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -613,7 +613,7 @@ const OmeletteMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -664,17 +664,17 @@ const GaufresMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {item.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {item.price}
@@ -682,7 +682,7 @@ const GaufresMenu = ({ section }: { section: MenuSection }) => {
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
             {item.extra && (
-              <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                 {item.extra}
               </p>
             )}
@@ -763,17 +763,17 @@ const CrepesMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {item.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {item.price}
@@ -781,7 +781,7 @@ const CrepesMenu = ({ section }: { section: MenuSection }) => {
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
             {item.extra && (
-              <p className="text-xs mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                 {item.extra}
               </p>
             )}
@@ -862,17 +862,17 @@ const BriocheMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {item.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {item.price}
@@ -956,17 +956,17 @@ const CroissantsMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {item.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {item.price}
@@ -974,7 +974,7 @@ const CroissantsMenu = ({ section }: { section: MenuSection }) => {
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
             {item.extra && (
-              <p className="text-xs mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                 {item.extra}
               </p>
             )}
@@ -1096,13 +1096,13 @@ const CroissantsSalesMenu = ({ section }: { section: MenuSection }) => {
           <div className="flex-1">
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {items[0]?.title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {items[0]?.price}
@@ -1110,7 +1110,7 @@ const CroissantsSalesMenu = ({ section }: { section: MenuSection }) => {
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
             {items[0]?.description && (
-              <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                 {items[0].description}
               </p>
             )}
@@ -1137,13 +1137,13 @@ const CroissantsSalesMenu = ({ section }: { section: MenuSection }) => {
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1151,7 +1151,7 @@ const CroissantsSalesMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1218,17 +1218,17 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1236,7 +1236,7 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1261,16 +1261,16 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
           {/* 3 middle items */}
           <div className="flex-1 flex flex-col gap-5">
             {middleItems.map((item, idx) => (
-              <div key={idx} className="sm:ml-auto sm:w-[90%]">
+              <div key={idx} className="sm:ml-auto sm:w-[80%]">
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1278,7 +1278,7 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1293,13 +1293,13 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
             <div key={idx} className="w-full sm:w-[80%]">
               <div className="flex justify-between items-center px-2">
                 <h3
-                  className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                 >
                   {item.title}
                 </h3>
                 <span
-                  className="text-lg sm:text-xl md:text-[22px] ml-2"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                 >
                   {item.price}
@@ -1307,7 +1307,7 @@ const Toasts2Menu = ({ section }: { section: MenuSection }) => {
               </div>
               <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
               {item.description && (
-                <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                   {item.description}
                 </p>
               )}
@@ -1368,17 +1368,17 @@ const ToastsCombinedMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1386,7 +1386,7 @@ const ToastsCombinedMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-xs mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1462,17 +1462,17 @@ const ToastsMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1480,7 +1480,7 @@ const ToastsMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1535,23 +1535,23 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
         <div className="mx-auto mb-6" style={{ width: 50, borderTop: "1px solid rgba(238, 218, 183, 0.5)" }} />
 
         {/* First 6 items in alternating pattern */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6 mt-4">
           {items.slice(0, 6).map((item, idx) => {
             const isLeft = idx % 2 === 0;
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1559,7 +1559,7 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1571,16 +1571,16 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
         {/* LE NORVÉGIEN with plate illustration */}
         {items[6] && (
           <div className="flex gap-4 mt-6">
-            <div className="flex-1">
+            <div className="flex-1 w-[80%]">
               <div className="flex justify-between items-center px-2">
                 <h3
-                  className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                 >
                   {items[6].title}
                 </h3>
                 <span
-                  className="text-lg sm:text-xl md:text-[22px] ml-2"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                 >
                   {items[6].price}
@@ -1588,20 +1588,10 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
               </div>
               <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
               {items[6].description && (
-                <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                   {items[6].description}
                 </p>
               )}
-            </div>
-            {/* Plate illustration */}
-            <div className="hidden sm:flex items-center justify-center" style={{ width: "20%" }}>
-              <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="35" cy="35" r="30" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-                <circle cx="35" cy="35" r="25" stroke="#c9b896" strokeWidth="1" fill="none" />
-                <ellipse cx="28" cy="30" rx="8" ry="5" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-                <ellipse cx="42" cy="32" rx="6" ry="4" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-                <path d="M25 40 Q35 45 45 40" stroke="#c9b896" strokeWidth="0.8" fill="none" />
-              </svg>
             </div>
           </div>
         )}
@@ -1609,23 +1599,16 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
         {/* L'ITALIEN with avocado illustration */}
         {items[7] && (
           <div className="flex gap-4 mt-6">
-            {/* Avocado illustration */}
-            <div className="hidden sm:flex items-center justify-center" style={{ width: "20%" }}>
-              <svg width="60" height="70" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 5 Q10 25 10 45 Q10 65 30 65 Q50 65 50 45 Q50 25 30 5" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-                <ellipse cx="30" cy="45" rx="12" ry="14" stroke="#c9b896" strokeWidth="1" fill="none" />
-              </svg>
-            </div>
-            <div className="flex-1 sm:ml-auto">
+            <div className="flex-1 w-[80%] ml-auto">
               <div className="flex justify-between items-center px-2">
                 <h3
-                  className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                 >
                   {items[7].title}
                 </h3>
                 <span
-                  className="text-lg sm:text-xl md:text-[22px] ml-2"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                   style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                 >
                   {items[7].price}
@@ -1633,7 +1616,7 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
               </div>
               <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
               {items[7].description && (
-                <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                   {items[7].description}
                 </p>
               )}
@@ -1643,16 +1626,16 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
 
         {/* ENGLISH - last item */}
         {items[8] && (
-          <div className="w-full sm:w-[80%] mt-6">
+          <div className="w-[80%] mt-6">
             <div className="flex justify-between items-center px-2">
               <h3
-                className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
               >
                 {items[8].title}
               </h3>
               <span
-                className="text-lg sm:text-xl md:text-[22px] ml-2"
+                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                 style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
               >
                 {items[8].price}
@@ -1660,12 +1643,13 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
             </div>
             <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
             {items[8].description && (
-              <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'LaLuxes', serif" }}>
+              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                 {items[8].description}
               </p>
             )}
           </div>
         )}
+
 
         <div className="pb-2" />
       </div>
@@ -1684,7 +1668,7 @@ const LasagnesRisottoMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
@@ -1831,17 +1815,17 @@ const PlatsMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-base sm:text-lg md:text-[20px] tracking-wider flex-1"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
                   >
                     {item.title}
                   </h3>
                   <span
-                    className="text-lg sm:text-xl md:text-[22px] ml-2"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
                   >
                     {item.price}
@@ -1849,7 +1833,7 @@ const PlatsMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -1905,11 +1889,11 @@ const BowlsMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-lg sm:text-xl md:text-[24px] tracking-wider"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.1em" }}
                   >
                     {item.title}
@@ -1923,7 +1907,7 @@ const BowlsMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -2000,11 +1984,11 @@ const SandwichsMenu = ({ section }: { section: MenuSection }) => {
             return (
               <div
                 key={idx}
-                className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
               >
                 <div className="flex justify-between items-center px-2">
                   <h3
-                    className="text-lg sm:text-xl md:text-[24px] tracking-wider"
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider"
                     style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.1em" }}
                   >
                     {item.title}
@@ -2018,7 +2002,7 @@ const SandwichsMenu = ({ section }: { section: MenuSection }) => {
                 </div>
                 <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
                 {item.description && (
-                  <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
                     {item.description}
                   </p>
                 )}
@@ -2067,7 +2051,7 @@ const PizzasMenu = ({ section }: { section: MenuSection }) => {
     return (
       <div
         key={idx}
-        className={`w-full sm:w-[80%] ${isLeft ? '' : 'sm:ml-auto'}`}
+        className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
       >
         <div className="flex justify-between items-center px-2">
           <h3
@@ -2085,7 +2069,7 @@ const PizzasMenu = ({ section }: { section: MenuSection }) => {
         </div>
         <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
         {item.description && (
-          <p className="text-sm mt-2 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+          <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
             {item.description}
           </p>
         )}
@@ -2212,7 +2196,7 @@ const BoissonsMenu = ({ section }: { section: MenuSection }) => {
         return (
           <div
             key={idx}
-            className={`w-full sm:w-[75%] ${isLeft ? '' : 'sm:ml-auto'}`}
+            className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
           >
             <div className="flex justify-between items-center px-2">
               <h3
@@ -2741,20 +2725,20 @@ export default function MenuGallery() {
             <button
               onClick={prev}
               aria-label="Previous"
-              className="p-2 sm:p-3 py-2 bg-white/10 hover:bg-white/20 rounded-full sm:rounded text-[#eedab7] transition-colors flex-shrink-0"
+              className="p-3 sm:p-4 py-3 sm:py-4 bg-white/10 hover:bg-white/20 rounded-full sm:rounded text-[#eedab7] transition-colors flex-shrink-0"
             >
-              <span className="text-sm sm:text-base">◀</span>
+              <span className="text-lg sm:text-xl">◀</span>
             </button>
-            <div ref={navRef} className="no-scrollbar overflow-x-auto whitespace-nowrap flex gap-2 sm:gap-3 px-1 sm:px-2 py-2 flex-1">
+            <div ref={navRef} className="no-scrollbar overflow-x-auto whitespace-nowrap flex gap-3 sm:gap-4 px-2 sm:px-4 py-4 flex-1 items-center">
               {(source as MenuSection[]).map((s, i) => (
                 <button
                   key={s.id}
                   onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                  className={`min-w-[70px] sm:min-w-[100px] md:min-w-[120px] px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg transition-all duration-200 flex-shrink-0 ${i === index ? 'bg-[#d4a574] text-black shadow-lg' : 'bg-white/10 text-[#eedab7] hover:bg-white/20'}`}
+                  className={`min-w-[100px] sm:min-w-[120px] md:min-w-[140px] px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-lg transition-all duration-200 flex-shrink-0 ${i === index ? 'bg-[#d4a574] text-black shadow-lg' : 'bg-white/10 text-[#eedab7] hover:bg-white/20'}`}
                 >
                   <div
                     style={{ fontFamily: "'LaLuxes', serif" }}
-                    className="text-[10px] sm:text-xs md:text-sm truncate"
+                    className="text-[14px] sm:text-[16px] md:text-[18px] truncate tracking-wider"
                   >
                     {s.label}
                   </div>
@@ -2764,9 +2748,9 @@ export default function MenuGallery() {
             <button
               onClick={next}
               aria-label="Next"
-              className="p-2 sm:p-3 py-2 bg-white/10 hover:bg-white/20 rounded-full sm:rounded text-[#eedab7] transition-colors flex-shrink-0"
+              className="p-3 sm:p-4 py-3 sm:py-4 bg-white/10 hover:bg-white/20 rounded-full sm:rounded text-[#eedab7] transition-colors flex-shrink-0"
             >
-              <span className="text-sm sm:text-base">▶</span>
+              <span className="text-lg sm:text-xl">▶</span>
             </button>
           </div>
         </div>
