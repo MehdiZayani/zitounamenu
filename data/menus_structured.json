@@ -42,12 +42,12 @@
     "label": "MENU PAGE-0002",
     "leftItems": [
       {
-        "title": "CIASSIQUE",
+        "title": "CLASSIQUE",
         "price": "14,900",
         "description": "OEUF BROUIILÉ 16200"
       },
       {
-        "title": "BURRATA TOMATE ENFITE",
+        "title": "BURRATA TOMATE CONFITE",
         "price": "19,600",
         "description": "POULET FUME 18000 |"
       },
@@ -59,7 +59,7 @@
     ],
     "rightItems": [
       {
-        "title": "CON@RDE",
+        "title": "CONCORDE",
         "price": "16,200",
         "description": "TUNISIENNE 19000 _"
       },
@@ -75,7 +75,7 @@
     "label": "MENU PAGE-0003",
     "leftItems": [
       {
-        "title": "CRUNCHY CHICKEN CESAR",
+        "title": "CRUNCHY CHICKEN CÉSAR",
         "price": "22,600",
         "description": "| | sauce fromage, poulet pané, parmesan, laitue | | | | |"
       },
@@ -85,7 +85,7 @@
         "description": "i IE 0 00 A | | sauce fromage, crevette sauté au paprika, roquette | | | | | N |"
       },
       {
-        "title": "té À FETA",
+        "title": "FETA",
         "price": "14,800",
         "description": "LE \\& Lane de. TLC TEEN \\ SA SSE ; + 12 “NA 5 : | \\ ( \\ Sf TM Ail confit, légumes grillé, feta, œuf poché | NEE) | CET"
       },
@@ -97,22 +97,22 @@
     ],
     "rightItems": [
       {
-        "title": "DWEET CHILL SHRIMP",
+        "title": "SWEET CHILI SHRIMP",
         "price": "29,800",
         "description": "| | sauce fromage, crevette pané et enrobé de sweet chili sauce , roquette | | | | |"
       },
       {
-        "title": "Bb CREME DE THON",
+        "title": "CRÈME DE THON",
         "price": "18,000",
         "description": "A A — | | 7 SN ail confit crème de thon, persil, oeuf poché | IN STEN,"
       },
       {
-        "title": "S— [TT AILE RS",
+        "title": "ITALIENNE",
         "price": "18,900",
         "description": "| | sauce fromage, bresaola, pesto, roquette, œuf poché | | |"
       },
       {
-        "title": "BURRA | À BRESAOLA",
+        "title": "BURRATA BRESAOLA",
         "price": "22,800",
         "description": "| | sauce fromage ,burrata,bresaola, pesto, roquette ,balsamique | | | | | Less Ts si)"
       }
@@ -128,7 +128,7 @@
         "description": "sauce fromage, jambon fumé, emmental |"
       },
       {
-        "title": "BRESAOIA",
+        "title": "BRESAOLA",
         "price": "17,200",
         "description": "sauce fromage, Bresaola, emmental, pesto, balsamique | | SAUMON 21800 | | sauce fromage, avocat, saumon | | Oeuf:15 dt Saumon fumé : 8 dt | | Emmental:3 dt Avocat : 5 dt | | Champignons sautés : 4 dt Burrata : 6 dt | | Sauce fromage : 2 dt Croissant : 3 dt | | Feta:4dt Pain au chocolat : 3,5 dt | | Truffe : 6 dt Frites : 4,5 dt |"
       }
@@ -146,14 +146,14 @@
     "label": "CROISSANTS",
     "leftItems": [
       {
-        "title": "SPÉCUIOOS",
+        "title": "SPECULOOS",
         "price": "13,000",
         "description": "Neo ee"
       }
     ],
     "rightItems": [
       {
-        "title": "BRESAOIA",
+        "title": "BRESAOLA",
         "price": "14,900",
         "description": "SAUMON FUME = 19900"
       }
@@ -209,7 +209,7 @@
     ],
     "rightItems": [
       {
-        "title": "RIGITA EPINARD",
+        "title": "RIGATA ÉPINARD",
         "price": "14,600",
         "description": "CHAMPIGNONS 16800 | | TRUFFES |"
       }
@@ -220,7 +220,7 @@
     "label": "VUS",
     "leftItems": [
       {
-        "title": "BRESAOIA",
+        "title": "BRESAOLA",
         "price": "15,700",
         "description": "CREPES | GAUFRES"
       }
@@ -316,7 +316,7 @@
     "label": "MENU PAGE-0012",
     "leftItems": [
       {
-        "title": "BOIOGNAISE",
+        "title": "BOLOGNAISE",
         "price": "26,400",
         "description": "LASAGNE 27800 — | CANNEILONI RIGTTA 21600 | EPINARD A. |"
       },
@@ -344,7 +344,7 @@
     "label": "POULET GRIILEE",
     "leftItems": [
       {
-        "title": "ESCAIOPE DE",
+        "title": "ESCALOPE DE POULET GRILLÉE",
         "price": "22,900",
         "description": "POULET GRIILEE |"
       },
@@ -417,7 +417,7 @@
     ],
     "rightItems": [
       {
-        "title": "BAZON",
+        "title": "BAVON",
         "price": "17,900",
         "description": "bresaola, emmental, roquette |"
       },
@@ -438,7 +438,7 @@
         "description": "Sauce tomate, mozzarella, basilic | VEGETARIANA 21800 | | Sauce tomate, mozzarella, légumes grillés |"
       },
       {
-        "title": "NAPOILTANA",
+        "title": "NAPOLITANA",
         "price": "21,900",
         "description": "Sauce tomate, mozzarella,anchois, capres, olives noirs, origan |"
       }
@@ -466,7 +466,7 @@
         "description": "QUATTRO FORMAGGI 28600 | | parmesan, emmental |"
       },
       {
-        "title": "BRESAOIA",
+        "title": "BRESAOLA",
         "price": "26,900",
         "description": ""
       }
@@ -516,9 +516,9 @@
         "description": "GRAND TASSE 4500 = GRAND CREME 4800 |"
       },
       {
-        "title": "GRAND",
+        "title": "GRAND AFFOGATO",
         "price": "10,900",
-        "description": "AFFŒATO |"
+        "description": ""
       }
     ]
   },
@@ -532,12 +532,12 @@
         "description": ""
       },
       {
-        "title": "BEURRE DE",
+        "title": "BEURRE DE CACAHUÈTE",
         "price": "10,200",
-        "description": "CACAHUETE |"
+        "description": ""
       },
       {
-        "title": "NUTEILA",
+        "title": "NUTELLA",
         "price": "13,400",
         "description": ""
       },
@@ -549,7 +549,7 @@
     ],
     "rightItems": [
       {
-        "title": "NOISFTTE",
+        "title": "NOISETTE",
         "price": "13,400",
         "description": "NUTEILA / CARAMEL / 12700 | | BEURRE DE CACAHUETE / SPEECUIOS | CAFÉS | AES | HF |"
       },
@@ -615,7 +615,7 @@
         "description": ""
       },
       {
-        "title": "CARMEL",
+        "title": "CARAMEL",
         "price": "16,800",
         "description": "y SMOQTHES I ="
       },
@@ -637,17 +637,17 @@
         "description": ""
       },
       {
-        "title": "SPEECUIOSS",
+        "title": "SPECULOOS",
         "price": "16,800",
         "description": ""
       },
       {
-        "title": "& FRUITS ROUGE",
+        "title": "FRUITS ROUGE",
         "price": "16,800",
         "description": ""
       },
       {
-        "title": "PINAGIADA",
+        "title": "PINACOLADA",
         "price": "16,800",
         "description": ""
       }
@@ -664,7 +664,7 @@
       },
       {
         "title": "FRAISE",
-        "price": "1,900",
+        "price": "11,900",
         "description": ""
       },
       {
@@ -675,12 +675,12 @@
     ],
     "rightItems": [
       {
-        "title": "=> CITRON",
+        "title": "CITRON",
         "price": "9,900",
         "description": ""
       },
       {
-        "title": "PINAGIADA",
+        "title": "PINACOLADA",
         "price": "13,900",
         "description": "ICETEA"
       },
@@ -698,7 +698,7 @@
       {
         "title": "CITRONNADE",
         "price": "7,800",
-        "description": "JUS D'ORANGE 3200 |"
+        "description": "JUS D'ORANGE 8,200 |"
       },
       {
         "title": "BANANE",
