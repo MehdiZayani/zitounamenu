@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1e12;
+  --foreground: #eedab7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  overflow-x: clip;
+  min-height: 100vh;
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  h1,
+  h2,
+  h3 {
+    word-break: break-word;
+  }
+}
+
+/* Fix for mobile horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+main {
+  overflow-x: clip;
+  width: 100%;
+}
