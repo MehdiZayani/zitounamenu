@@ -34,9 +34,9 @@ const menuData: MenuSection[] = [
       { title: "L'ITALIEN", price: "25,000", description: "breasaola, oeuf brouillé, champignon, avocat, fromage blanc, salade" },
       { title: "ENGLISH", price: "20,900", description: "Chacuterie, fromage blanc, 2 oeufs au plat, champignons et tomates sautés" },
       { title: "BÉNÉDICTE AVOCAT", price: "20,800", description: "Oeufs pochés, sauce hollandaise, avocat" },
-      { title: "BÉNÉDICTE SAUMON", price: "21,600", description: "Oeufs pochés, sauce hollandaise, saumon fumé" },
+      { title: "BÉNÉDICTE SAUMON", price: "21,600", description: "Oeufs pochés, sauce hollandaise, saumon fumé, épinards" },
       { title: "BÉNÉDICTE BRESAOLA CHAMPIGNONS", price: "19,800", description: "Oeufs pochés, sauce hollandaise, bresaola, champignons" },
-      { title: "BÉNÉDICTE BOEUF", price: "23,800", description: "Oeufs pochés, sauce hollandaise, émincé de boeuf" }
+      { title: "BÉNÉDICTE BOEUF", price: "23,800", description: "Oeufs pochés, sauce hollandaise, émincé de boeuf, oignon caramélisé" }
     ],
     rightItems: []
   },
@@ -159,7 +159,10 @@ const menuData: MenuSection[] = [
       { title: "SALADE POULET FUMÉ", price: "21,900", description: "Salade, poulet fumé, bresaola, croutons" },
       { title: "CAMEMBERT PANÉ", price: "20,200", description: "Roquette, tomate, camembert pané, date, noix, balsamique, miel" },
       { title: "BURRATA", price: "22,400", description: "Roquette, tomate, noix, burrata, bresaola, pesto, balsamique" },
-      { title: "CREVETTES PANÉES", price: "32,800", description: "Roquette, crevettes panées aux amandes, sauce aigre douce" }
+      { title: "CREVETTES PANÉES", price: "32,800", description: "Roquette, crevettes panées aux amandes, sauce aigre douce" },
+      { title: "SALADE DE THON", price: "22,900", description: "" },
+      { title: "SALADE MOZZARELLA PANNE", price: "22,800", description: "" },
+      { title: "SALADE FRUIT DE MER", price: "29,900", description: "" }
     ],
     rightItems: []
   },
@@ -223,7 +226,11 @@ const menuData: MenuSection[] = [
       { title: "ESCALOPE DE POULET SAUCE CHAMPIGNONS", price: "26,600", description: "" },
       { title: "POULET PARMIGIANA", price: "28,800", description: "Escalope de poulet pané, sauce tomate, mozzarella gratiné" },
       { title: "FILET DE BOEUF SAUCE AUX CHOIX", price: "46,200", description: "Champignons, truffe, poivre, fromage, chimichurri" },
-      { title: "FILET DE LOUP SAUCE CITRON", price: "32,000", description: "" }
+      { title: "FILET DE LOUP SAUCE CITRON", price: "32,000", description: "" },
+      { title: "RISOTTO FRUITS DE MER", price: "41,900", description: "" },
+      { title: "PATE FRUITS DE MER", price: "37,900", description: "" },
+      { title: "TAGLIATELLI A MODO MIO", price: "29,400", description: "" },
+      { title: "PATE BURATTA PESTO", price: "27,800", description: "" }
     ],
     rightItems: []
   },
@@ -252,9 +259,9 @@ const menuData: MenuSection[] = [
       { title: "TASTY BEEF", price: "19,900", description: "Sauce maison, émincé de boeuf, camembert, roquette" },
       { title: "POULET ÉPICÉ", price: "17,900", description: "Harissa, mayonnaise, poulet épicé, mozarella" },
       { title: "SANDWICH THON", price: "14,900", description: "Mayonnaise, harissa, thon, salade, oeuf" },
-      { title: "CESAR ROLL", price: "18,900", description: "Sauce césar, poulet grillé, parmesan, laitue" },
-      { title: "CHICKEN ROLL", price: "18,900", description: "Sauce maison, poulet pané, emmental, roquette" },
-      { title: "PHILLY STEAK ROLL", price: "19,900", description: "Sauce maison, émincé de boeuf, oignons, poivrons, emmental" },
+      { title: "CESAR ROLL", price: "18,900", description: "Sauce césar, poulet pané , parmesan, laitue" },
+      { title: "CHICKEN ROLL", price: "18,900", description: "Poulet grillé fondant, tomate séchée" },
+      { title: "PHILLY STEAK ROLL", price: "19,900", description: "Émincé de boeuf fondant, poivron oignon grillé" },
       { title: "SHRIMP ROLL", price: "20,900", description: "Sauce maison, crevettes, avocat, roquette" }
     ],
     rightItems: []
@@ -2736,7 +2743,7 @@ export default function MenuGallery() {
         @font-face { font-family: 'zoxi-regular'; src: url('/fonts/zoxi-regular.ttf') format('truetype'); }
         @font-face { font-family: 'Myriad Pro'; src: url('/fonts/MYRIADPRO-REGULAR.OTF') format('opentype'); }
         /* Allow normal scrolling and pointer interactions */
-        body { overflow: auto; margin: 0; padding: 0; }
+        body { margin: 0; padding: 0; }
         /* Hide horizontal scrollbar in the nav while keeping scroll functionality */
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
