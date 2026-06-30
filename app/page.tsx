@@ -196,7 +196,10 @@ const menuData: MenuSection[] = [
       { title: "POULET CHAMPIGNONS", price: "23,900", description: "Sauce rosée ou blanche" },
       { title: "AGLIO, OLIO & GAMBAS", price: "33,200", description: "" },
       { title: "GAMBARI", price: "34,900", description: "Crevettes, courgettes" },
-      { title: "CREVETTES CHAMPIGNONS", price: "35,600", description: "Sauce rosée" }
+      { title: "CREVETTES CHAMPIGNONS", price: "35,600", description: "Sauce rosée" },
+      { title: "PATE FRUITS DE MER", price: "37,900", description: "" },
+      { title: "TAGLIATELLI A MODO MIO", price: "29,400", description: "" },
+      { title: "PATE BURATTA PESTO", price: "27,800", description: "" }
     ],
     rightItems: []
   },
@@ -227,10 +230,7 @@ const menuData: MenuSection[] = [
       { title: "POULET PARMIGIANA", price: "28,800", description: "Escalope de poulet pané, sauce tomate, mozzarella gratiné" },
       { title: "FILET DE BOEUF SAUCE AUX CHOIX", price: "46,200", description: "Champignons, truffe, poivre, fromage, chimichurri" },
       { title: "FILET DE LOUP SAUCE CITRON", price: "32,000", description: "" },
-      { title: "RISOTTO FRUITS DE MER", price: "41,900", description: "" },
-      { title: "PATE FRUITS DE MER", price: "37,900", description: "" },
-      { title: "TAGLIATELLI A MODO MIO", price: "29,400", description: "" },
-      { title: "PATE BURATTA PESTO", price: "27,800", description: "" }
+      { title: "RISOTTO FRUITS DE MER", price: "41,900", description: "" }
     ],
     rightItems: []
   },
