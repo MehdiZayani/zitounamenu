@@ -196,10 +196,10 @@ const menuData: MenuSection[] = [
       { title: "POULET CHAMPIGNONS", price: "23,900", description: "Sauce rosée ou blanche" },
       { title: "AGLIO, OLIO & GAMBAS", price: "33,200", description: "" },
       { title: "GAMBARI", price: "34,900", description: "Crevettes, courgettes" },
-      { title: "CREVETTES CHAMPIGNONS", price: "35,600", description: "Sauce rosée" },
-      { title: "PATE FRUITS DE MER", price: "37,900", description: "" },
-      { title: "TAGLIATELLI A MODO MIO", price: "29,400", description: "" },
-      { title: "PATE BURATTA PESTO", price: "27,800", description: "" }
+      { title: "PENNE CREVETTES CHAMPIGNONS", price: "35,600", description: "Sauce rosée" },
+      { title: "SPAGHETTI FRUITS DE MER", price: "37,900", description: "" },
+      { title: "TAGLIATELLI A MODO MIO", price: "29,400", description: "Viande Haché champignion" },
+      { title: "RIGATONI PESTA BURATTA ", price: "27,800", description: "" }
     ],
     rightItems: []
   },
@@ -209,12 +209,13 @@ const menuData: MenuSection[] = [
     label: "LASAGNES",
     subtitle: "Menu",
     leftItems: [
-      { title: "BOLOGNAISE", price: "26,400", description: "lasagnes" },
+      { title: "SPAGHETTI BOLOGNAISE", price: "26,400", description: "lasagnes" },
       { title: "LASAGNE", price: "27,800", description: "lasagnes" },
-      { title: "CANNELLONI RICOTTA EPINARD", price: "21,600", description: "lasagnes" },
       { title: "CHAMPIGNONS TRUFFÉS", price: "34,800", description: "risotto" },
       { title: "POULET FUMÉ", price: "29,800", description: "risotto" },
-      { title: "CREVETTES", price: "38,900", description: "risotto" }
+      { title: "CREVETTES", price: "38,900", description: "risotto" },
+      { title: "RISOTTO FRUITS DE MER", price: "41,900", description: "risotto" }
+
     ],
     rightItems: []
   },
@@ -229,8 +230,7 @@ const menuData: MenuSection[] = [
       { title: "ESCALOPE DE POULET SAUCE CHAMPIGNONS", price: "26,600", description: "" },
       { title: "POULET PARMIGIANA", price: "28,800", description: "Escalope de poulet pané, sauce tomate, mozzarella gratiné" },
       { title: "FILET DE BOEUF SAUCE AUX CHOIX", price: "46,200", description: "Champignons, truffe, poivre, fromage, chimichurri" },
-      { title: "FILET DE LOUP SAUCE CITRON", price: "32,000", description: "" },
-      { title: "RISOTTO FRUITS DE MER", price: "41,900", description: "" }
+      { title: "GRATIN DE FRUITS DE MER", price: "29,800", description: "" },
     ],
     rightItems: []
   },
@@ -240,7 +240,6 @@ const menuData: MenuSection[] = [
     label: "BOWLS",
     subtitle: "Menu",
     leftItems: [
-      { title: "BEEF BOWL", price: "44,800", description: "Riz sauté avec du soja, filet de boeuf laqué au soja, tomates cerise, parmesan" },
       { title: "CHICKEN LEMON BOWL", price: "20,200", description: "Riz sauté au citron, poulet grillé, légumes" },
       { title: "TERIYAKI POULET", price: "23,200", description: "Riz sauté avec du soja, émincé de poulet sauce teriyaki, légumes" },
       { title: "PROTÉINÉ", price: "21,900", description: "Riz, poulet grillé, 2 oeufs dur, avocat" }
@@ -259,10 +258,19 @@ const menuData: MenuSection[] = [
       { title: "TASTY BEEF", price: "19,900", description: "Sauce maison, émincé de boeuf, camembert, roquette" },
       { title: "POULET ÉPICÉ", price: "17,900", description: "Harissa, mayonnaise, poulet épicé, mozarella" },
       { title: "SANDWICH THON", price: "14,900", description: "Mayonnaise, harissa, thon, salade, oeuf" },
+
+    ],
+    rightItems: []
+  },
+    {
+    id: "rolls",
+    label: "Rolls",
+    subtitle: "Menu",
+    leftItems: [
       { title: "CESAR ROLL", price: "18,900", description: "Sauce césar, poulet pané , parmesan, laitue" },
       { title: "CHICKEN ROLL", price: "18,900", description: "Poulet grillé fondant, tomate séchée" },
       { title: "PHILLY STEAK ROLL", price: "19,900", description: "Émincé de boeuf fondant, poivron oignon grillé" },
-      { title: "SHRIMP ROLL", price: "20,900", description: "Sauce maison, crevettes, avocat, roquette" }
+      { title: "SHRIMP ROLL", price: "20,900", description: "Sauce maison, crevettes, roquette" }
     ],
     rightItems: []
   },
@@ -938,7 +946,7 @@ const BriocheMenu = ({ section }: { section: MenuSection }) => {
         {/* Sucrées Section */}
         <div className="text-center mb-4">
           <span
-            className="text-lg sm:text-xl md:text-[28px]"
+            className="text-xl sm:text-xl md:text-[50px]"
             style={{ fontFamily: "'zoxi-regular'", color: "#c9782b", letterSpacing: "0.05em" }}
           >
             Sucrés
@@ -949,7 +957,7 @@ const BriocheMenu = ({ section }: { section: MenuSection }) => {
         {/* Salées Section */}
         <div className="text-center mb-4 mt-8">
           <span
-            className="text-lg sm:text-xl md:text-[28px]"
+            className="text-xl sm:text-xl md:text-[50px]"
             style={{ fontFamily: "'zoxi-regular'", color: "#c9782b", letterSpacing: "0.05em" }}
           >
             Salées
@@ -2085,6 +2093,101 @@ const SandwichsMenu = ({ section }: { section: MenuSection }) => {
     </div>
   );
 };
+const RollsMenu = ({ section }: { section: MenuSection }) => {
+  const items = section.leftItems || [];
+
+  return (
+    <div
+      className="min-h-fit w-screen flex items-start justify-center"
+      style={{
+        backgroundImage: "url('/coffee/boissons-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll"
+      }}
+    >
+      <div
+        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
+        style={{ maxWidth: 700 }}
+      >
+        {/* SANDWICHS Title */}
+        <div className="text-center mb-8 mt-6">
+          <h1
+            className="text-3xl sm:text-4xl md:text-[52px] tracking-widest"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.12em", fontWeight: 400, marginBottom: 0 }}
+          >
+            Rolls
+          </h1>
+          <span
+            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
+            style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
+          >
+            Menu
+          </span>
+          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(238, 218, 183, 0.5)" }} />
+        </div>
+
+        {/* Items in alternating left/right pattern */}
+        <div className="flex flex-col gap-6">
+          {items.map((item, idx) => {
+            const isLeft = idx % 2 === 0;
+            return (
+              <div
+                key={idx}
+                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
+              >
+                <div className="flex justify-between items-center px-2">
+                  <h3
+                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.1em" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <span
+                    className="text-lg sm:text-xl md:text-[22px]"
+                    style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
+                  >
+                    {item.price}
+                  </span>
+                </div>
+                <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
+                {item.description && (
+                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                    {item.description}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Sandwich illustration at bottom */}
+        <div className="flex justify-center mt-10 mb-4">
+          <svg viewBox="0 0 140 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 sm:w-44 opacity-50">
+            {/* Top bread */}
+            <path d="M10 20 Q70 5 130 20" stroke="#c9b896" strokeWidth="1.5" fill="none" />
+            <path d="M10 20 Q10 15 20 12 Q70 0 120 12 Q130 15 130 20" stroke="#c9b896" strokeWidth="1.5" fill="none" />
+            {/* Filling layers */}
+            <path d="M12 22 Q70 18 128 22" stroke="#c9b896" strokeWidth="1" fill="none" />
+            <path d="M14 26 Q70 22 126 26" stroke="#c9b896" strokeWidth="1" fill="none" />
+            <path d="M15 30 Q70 26 125 30" stroke="#c9b896" strokeWidth="1" fill="none" />
+            {/* Bottom bread */}
+            <path d="M12 32 Q70 28 128 32" stroke="#c9b896" strokeWidth="1.5" fill="none" />
+            <path d="M12 32 Q12 38 20 40 Q70 48 120 40 Q128 38 128 32" stroke="#c9b896" strokeWidth="1.5" fill="none" />
+            {/* Decorative sesame seeds */}
+            <ellipse cx="40" cy="12" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
+            <ellipse cx="70" cy="8" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
+            <ellipse cx="100" cy="11" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
+            <ellipse cx="55" cy="10" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
+            <ellipse cx="85" cy="9" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
+          </svg>
+        </div>
+
+        <div className="pb-2" />
+      </div>
+    </div>
+  );
+};
 
 const PizzasMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
@@ -2804,7 +2907,7 @@ export default function MenuGallery() {
         <div className="flex flex-col items-center gap-10 py-8">
           {(source as MenuSection[]).map((s) => (
             <section id={s.id} key={s.id} className="w-full flex justify-center" style={{ scrollMarginTop: '80px' }}>
-              {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "boissons" ? <BoissonsMenu section={s} /> : s.id === "pizzas" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres" ? <GaufresMenu section={s} /> : s.id === "crepes" ? <CrepesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants" ? <CroissantsMenu section={s} /> : s.id === "toasts" ? <ToastsCombinedMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
+              {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "boissons" ? <BoissonsMenu section={s} /> : s.id === "pizzas" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "rolls" ? <RollsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres" ? <GaufresMenu section={s} /> : s.id === "crepes" ? <CrepesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants" ? <CroissantsMenu section={s} /> : s.id === "toasts" ? <ToastsCombinedMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
             </section>
           ))}
         </div>
