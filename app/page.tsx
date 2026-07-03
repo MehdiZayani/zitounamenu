@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface MenuItem {
   title: string;
@@ -24,7 +25,7 @@ const menuData: MenuSection[] = [
     label: "PETIT DEJ",
     subtitle: "Menu",
     leftItems: [
-      { title: "RAPIDE", price: "12,800", description: "Mini omelette ou oeuf brouillé, eau 0,5l" },
+      { title: "RAPIDE", price: "13,800", description: "Mini omelette ou oeuf brouillé, eau 0,5l" },
       { title: "BOWL GRANOLA", price: "18,900", description: "Yaourt, granola, fruits secs, fruits" },
       { title: "LE SUCRÉ", price: "21,600", description: "Mini crêpe, mini gaufre, mini bol de granola, fondant, mini brioche perdu, nutella, speculoos" },
       { title: "LE SALÉ", price: "22,200", description: "Mini omelette, toast fromage et tomate, assiette de charcuterie et fromage" },
@@ -2163,24 +2164,7 @@ const RollsMenu = ({ section }: { section: MenuSection }) => {
 
         {/* Sandwich illustration at bottom */}
         <div className="flex justify-center mt-10 mb-4">
-          <svg viewBox="0 0 140 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 sm:w-44 opacity-50">
-            {/* Top bread */}
-            <path d="M10 20 Q70 5 130 20" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-            <path d="M10 20 Q10 15 20 12 Q70 0 120 12 Q130 15 130 20" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-            {/* Filling layers */}
-            <path d="M12 22 Q70 18 128 22" stroke="#c9b896" strokeWidth="1" fill="none" />
-            <path d="M14 26 Q70 22 126 26" stroke="#c9b896" strokeWidth="1" fill="none" />
-            <path d="M15 30 Q70 26 125 30" stroke="#c9b896" strokeWidth="1" fill="none" />
-            {/* Bottom bread */}
-            <path d="M12 32 Q70 28 128 32" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-            <path d="M12 32 Q12 38 20 40 Q70 48 120 40 Q128 38 128 32" stroke="#c9b896" strokeWidth="1.5" fill="none" />
-            {/* Decorative sesame seeds */}
-            <ellipse cx="40" cy="12" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
-            <ellipse cx="70" cy="8" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
-            <ellipse cx="100" cy="11" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
-            <ellipse cx="55" cy="10" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
-            <ellipse cx="85" cy="9" rx="2" ry="1" stroke="#c9b896" strokeWidth="0.5" fill="none" />
-          </svg>
+          <Image src="/coffee/roll.png" alt="Rolls" width={150} height={150} quality={50} />
         </div>
 
         <div className="pb-2" />
