@@ -1615,9 +1615,9 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
           <div className="mb-8 mt-4">
             <h2
               className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
-              style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
+              style={{ fontFamily: "'zoxi-regular', serif", color: "#ffbf83ff", letterSpacing: "0.05em" }}
             >
-              Oeuf Brouillé
+              Les Oeufs Brouillés
             </h2>
             <div className="flex flex-col gap-6">
               {oeufsBrouilles.map((item, idx) => renderItem(item, idx, classiques.length))}
@@ -1630,9 +1630,9 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
           <div className="mb-8 mt-4">
             <h2
               className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
-              style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
+              style={{ fontFamily: "'zoxi-regular', serif", color: "#ffbf83ff", letterSpacing: "0.05em" }}
             >
-              Bénédicte
+              Les Bénédicte
             </h2>
             <div className="flex flex-col gap-6">
               {benedictes.map((item, idx) => renderItem(item, idx, classiques.length + oeufsBrouilles.length))}
