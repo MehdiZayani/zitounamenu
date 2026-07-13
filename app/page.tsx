@@ -34,10 +34,16 @@ const menuData: MenuSection[] = [
       { title: "LE NORVÉGIEN", price: "27,500", description: "Saumon fumé, oeuf brouillé, avocat, fromage blanc, salade" },
       { title: "L'ITALIEN", price: "25,000", description: "breasaola, oeuf brouillé, champignon, avocat, fromage blanc, salade" },
       { title: "ENGLISH", price: "20,900", description: "Chacuterie, fromage blanc, 2 oeufs au plat, champignons et tomates sautés" },
-      { title: "BÉNÉDICTE AVOCAT", price: "20,800", description: "Oeufs pochés, sauce hollandaise, avocat" },
-      { title: "BÉNÉDICTE SAUMON", price: "21,600", description: "Oeufs pochés, sauce hollandaise, saumon fumé, épinards" },
-      { title: "BÉNÉDICTE BRESAOLA CHAMPIGNONS", price: "19,800", description: "Oeufs pochés, sauce hollandaise, bresaola, champignons" },
-      { title: "BÉNÉDICTE BOEUF", price: "23,800", description: "Oeufs pochés, sauce hollandaise, émincé de boeuf, oignon caramélisé" }
+      { title: "BÉNÉDICTE AVOCAT", price: "20,800", description: "Oeufs pochés, sauce hollandaise, avocat", extra: "benedicte" },
+      { title: "BÉNÉDICTE SAUMON", price: "21,600", description: "Oeufs pochés, sauce hollandaise, saumon fumé, épinards", extra: "benedicte" },
+      { title: "BÉNÉDICTE BRESAOLA CHAMPIGNONS", price: "19,800", description: "Oeufs pochés, sauce hollandaise, bresaola, champignons", extra: "benedicte" },
+      { title: "BÉNÉDICTE BOEUF", price: "23,800", description: "Oeufs pochés, sauce hollandaise, émincé de boeuf, oignon caramélisé", extra: "benedicte" },
+      { title: "OEUF BROUILLÉ NATURE", price: "18,200", description: "", extra: "oeuf-brouille" },
+      { title: "LE SPORTIF", price: "18,900", description: "", extra: "oeuf-brouille" },
+      { title: "OEUF BROUILLÉ CHAMPIGNONS", price: "21,900", description: "", extra: "oeuf-brouille" },
+      { title: "OEUF BROUILLÉ BRESAOLA", price: "22,900", description: "", extra: "oeuf-brouille" },
+      { title: "OEUF BROUILLÉ POULET FUMÉ", price: "22,900", description: "", extra: "oeuf-brouille" },
+      { title: "OEUF BROUILLÉ SAUMON", price: "23,900", description: "", extra: "oeuf-brouille" }
     ],
     rightItems: []
   },
@@ -1526,6 +1532,41 @@ const ToastsMenu = ({ section }: { section: MenuSection }) => {
 const PetitDejMenu = ({ section }: { section: MenuSection }) => {
   const items = section.leftItems || [];
 
+  const classiques = items.filter(item => !item.extra);
+  const oeufsBrouilles = items.filter(item => item.extra === "oeuf-brouille");
+  const benedictes = items.filter(item => item.extra === "benedicte");
+
+  const renderItem = (item: MenuItem, idx: number, startIdx: number = 0) => {
+    const isLeft = (idx + startIdx) % 2 === 0;
+    return (
+      <div
+        key={idx}
+        className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
+      >
+        <div className="flex justify-between items-center px-2">
+          <h3
+            className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
+          >
+            {item.title}
+          </h3>
+          <span
+            className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
+          >
+            {item.price}
+          </span>
+        </div>
+        <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
+        {item.description && (
+          <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+            {item.description}
+          </p>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div
       className="min-h-fit w-screen flex items-start justify-center"
@@ -1562,150 +1603,42 @@ const PetitDejMenu = ({ section }: { section: MenuSection }) => {
         </p>
         <div className="mx-auto mb-6" style={{ width: 50, borderTop: "1px solid rgba(238, 218, 183, 0.5)" }} />
 
-        {/* First 6 items in alternating pattern */}
-        <div className="flex flex-col gap-6 mt-4">
-          {items.slice(0, 6).map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`w-[80%] ${isLeft ? '' : 'ml-auto'}`}
-              >
-                <div className="flex justify-between items-center px-2">
-                  <h3
-                    className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
-                    style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
-                {item.description && (
-                  <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+        {/* Classiques Section */}
+        <div className="mb-8">
+          <div className="flex flex-col gap-6">
+            {classiques.map((item, idx) => renderItem(item, idx, 0))}
+          </div>
         </div>
 
-        {/* LE NORVÉGIEN with plate illustration */}
-        {items[6] && (
-          <div className="flex gap-4 mt-6">
-            <div className="flex-1 w-[80%]">
-              <div className="flex justify-between items-center px-2">
-                <h3
-                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
-                >
-                  {items[6].title}
-                </h3>
-                <span
-                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
-                >
-                  {items[6].price}
-                </span>
-              </div>
-              <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
-              {items[6].description && (
-                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
-                  {items[6].description}
-                </p>
-              )}
+        {/* Oeufs Brouillés Section */}
+        {oeufsBrouilles.length > 0 && (
+          <div className="mb-8 mt-4">
+            <h2
+              className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
+              style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
+            >
+              Oeuf Brouillé
+            </h2>
+            <div className="flex flex-col gap-6">
+              {oeufsBrouilles.map((item, idx) => renderItem(item, idx, classiques.length))}
             </div>
           </div>
         )}
 
-        {/* L'ITALIEN with avocado illustration */}
-        {items[7] && (
-          <div className="flex gap-4 mt-6">
-            <div className="flex-1 w-[80%] ml-auto">
-              <div className="flex justify-between items-center px-2">
-                <h3
-                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
-                >
-                  {items[7].title}
-                </h3>
-                <span
-                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
-                >
-                  {items[7].price}
-                </span>
-              </div>
-              <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
-              {items[7].description && (
-                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
-                  {items[7].description}
-                </p>
-              )}
+        {/* Bénédictes Section */}
+        {benedictes.length > 0 && (
+          <div className="mb-8 mt-4">
+            <h2
+              className="text-center text-2xl sm:text-3xl md:text-[38px] mb-6"
+              style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
+            >
+              Bénédicte
+            </h2>
+            <div className="flex flex-col gap-6">
+              {benedictes.map((item, idx) => renderItem(item, idx, classiques.length + oeufsBrouilles.length))}
             </div>
           </div>
         )}
-
-        {/* ENGLISH - item[8] */}
-        {items[8] && (
-          <div className="w-[80%] mt-6">
-            <div className="flex justify-between items-center px-2">
-              <h3
-                className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
-              >
-                {items[8].title}
-              </h3>
-              <span
-                className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
-                style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
-              >
-                {items[8].price}
-              </span>
-            </div>
-            <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
-            {items[8].description && (
-              <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
-                {items[8].description}
-              </p>
-            )}
-          </div>
-        )}
-
-        {/* Remaining items (BÉNÉDICT etc.) */}
-        {items.slice(9).map((item, idx) => {
-          const isLeft = idx % 2 === 0;
-          return (
-            <div key={idx + 9} className={`w-[80%] mt-6 ${isLeft ? '' : 'ml-auto'}`}>
-              <div className="flex justify-between items-center px-2">
-                <h3
-                  className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1 uppercase"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
-                >
-                  {item.title}
-                </h3>
-                <span
-                  className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
-                  style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
-                >
-                  {item.price}
-                </span>
-              </div>
-              <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
-              {item.description && (
-                <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
-                  {item.description}
-                </p>
-              )}
-            </div>
-          );
-        })}
 
         <div className="pb-2" />
       </div>
