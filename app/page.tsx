@@ -117,13 +117,13 @@ const menuData: MenuSection[] = [
     leftItems: [
       { title: "THON", price: "15,800", description: "crepes-salees" },
       { title: "JAMBON FUMÉ", price: "15,800", description: "crepes-salees", extra: "Sauce à l'ail, mozzarella, jambon fumé" },
-      { title: "POULET ÉPICÉ", price: "17,900", description: "crepes-salees", extra: "Poulet épicé sauté avec du poivron et de l'oignion, mozzarella" },
+      { title: "POULET ÉPICÉ", price: "19,900", description: "crepes-salees", extra: "Poulet épicé sauté avec du poivron et de l'oignion, mozzarella" },
       { title: "SAUMON FUMÉ", price: "23,800", description: "crepes-salees" },
       { title: "RICOTTA ÉPINARD", price: "14,600", description: "crepes-salees" },
       { title: "CHAMPIGNONS TRUFFÉS", price: "16,800", description: "crepes-salees" },
       { title: "TUNISIENNE", price: "16,500", description: "crepes-salees", extra: "Sauce à l'ail, harissa, thon, oeuf, piment de cayenne, olive" },
       { title: "GOURMANDE", price: "17,400", description: "crepes-salees", extra: "Jambon, thon, oeuf" },
-      { title: "FOURRÉE POULET CHAMPIGNONS", price: "21,800", description: "crepes-salees", extra: "Poulet, champignons, mozzarella, sauce blanche" },
+      { title: "FOURRÉE POULET CHAMPIGNONS", price: "23,900", description: "crepes-salees", extra: "Poulet, champignons, mozzarella, sauce blanche" },
       { title: "NUTELLA", price: "15,600", description: "crepes-sucres" },
       { title: "NUTELLA BANANE", price: "16,800", description: "crepes-sucres" },
       { title: "NUTELLA AMANDES", price: "17,600", description: "crepes-sucres" },
@@ -162,7 +162,7 @@ const menuData: MenuSection[] = [
     label: "SALADES",
     subtitle: "Menu",
     leftItems: [
-      { title: "SALADE CÉSAR", price: "21,200", description: "Salade, poulet grillé, parmesan, croutons, noix" },
+      { title: "SALADE CÉSAR", price: "23,200", description: "Salade, poulet grillé, parmesan, croutons, noix" },
       { title: "SALADE POULET FUMÉ", price: "21,900", description: "Salade, poulet fumé, bresaola, croutons" },
       { title: "CAMEMBERT PANÉ", price: "20,200", description: "Roquette, tomate, camembert pané, date, noix, balsamique, miel" },
       { title: "BURRATA", price: "22,400", description: "Roquette, tomate, noix, burrata, bresaola, pesto, balsamique" },
@@ -179,12 +179,12 @@ const menuData: MenuSection[] = [
     label: "OMELETTES",
     subtitle: "Menu",
     leftItems: [
-      { title: "FROMAGE", price: "13,900", description: "" },
+      { title: "FROMAGE", price: "14,900", description: "" },
       { title: "THON", price: "17,900", description: "" },
       { title: "JAMBON FUMÉ", price: "17,900", description: "" },
       { title: "BRESAOLA", price: "19,500", description: "" },
       { title: "ÉPINARD FETA", price: "19,800", description: "" },
-      { title: "LÉGÈRE AUX LÉGUMES", price: "16,900", description: "" },
+      { title: "LÉGÈRE AUX LÉGUMES", price: "17,900", description: "" },
       { title: "SAUMON FUMÉ", price: "25,800", description: "" },
       { title: "GOURMANDE", price: "20,900", description: "Jambon, thon, fromage" }
     ],
@@ -197,10 +197,10 @@ const menuData: MenuSection[] = [
     subtitle: "Menu",
     leftItems: [
       { title: "CARBONARA", price: "23,800", description: "Poulet fumé, jaune d'oeuf coulant" },
-      { title: "PUTTANESCA", price: "21,800", description: "" },
+      { title: "PUTTANESCA", price: "22,900", description: "" },
       { title: "SAUMON FUMÉ", price: "30,800", description: "Sauce rosée" },
-      { title: "POULET PESTO", price: "23,900", description: "" },
-      { title: "POULET CHAMPIGNONS", price: "23,900", description: "Sauce rosée ou blanche" },
+      { title: "POULET PESTO", price: "26,700", description: "" },
+      { title: "POULET CHAMPIGNONS", price: "24,900", description: "Sauce rosée ou blanche" },
       { title: "AGLIO, OLIO & GAMBAS", price: "33,200", description: "" },
       { title: "GAMBARI", price: "34,900", description: "Crevettes, courgettes" },
       { title: "PENNE CREVETTES CHAMPIGNONS", price: "35,600", description: "Sauce rosée" },
@@ -232,8 +232,8 @@ const menuData: MenuSection[] = [
     label: "PLATS",
     subtitle: "Menu",
     leftItems: [
-      { title: "ESCALOPE DE POULET GRILLÉE", price: "22,900", description: "" },
-      { title: "ESCALOPE DE POULET PANÉ AUX AMANDES", price: "24,800", description: "" },
+      { title: "ESCALOPE DE POULET GRILLÉE", price: "23,900", description: "" },
+      { title: "ESCALOPE DE POULET PANÉ AUX AMANDES", price: "25,900", description: "" },
       { title: "ESCALOPE DE POULET SAUCE CHAMPIGNONS", price: "26,600", description: "" },
       { title: "POULET PARMIGIANA", price: "28,800", description: "Escalope de poulet pané, sauce tomate, mozzarella gratiné" },
       { title: "FILET DE BOEUF SAUCE AUX CHOIX", price: "46,200", description: "Champignons, truffe, poivre, fromage, chimichurri" },
@@ -247,9 +247,9 @@ const menuData: MenuSection[] = [
     label: "BOWLS",
     subtitle: "Menu",
     leftItems: [
-      { title: "CHICKEN LEMON BOWL", price: "20,200", description: "Riz sauté au citron, poulet grillé, légumes" },
+      { title: "CHICKEN LEMON BOWL", price: "23,200", description: "Riz sauté au citron, poulet grillé, légumes" },
       { title: "TERIYAKI POULET", price: "23,200", description: "Riz sauté avec du soja, émincé de poulet sauce teriyaki, légumes" },
-      { title: "PROTÉINÉ", price: "21,900", description: "Riz, poulet grillé, 2 oeufs dur, avocat" }
+      { title: "PROTÉINÉ", price: "23,200", description: "Riz, poulet grillé, 2 oeufs dur, avocat" }
     ],
     rightItems: []
   },
@@ -345,8 +345,8 @@ const menuData: MenuSection[] = [
       { title: "CHOCO", price: "7,500", description: "chocolat" },
       { title: "CHOCO CHANTILLY", price: "8,500", description: "chocolat" },
       // Boissons Froides
-      { title: "EAU 0,5", price: "2,500", description: "boissons-froides" },
-      { title: "EAU 1L", price: "3,900", description: "boissons-froides" },
+      { title: "EAU 0,5", price: "2,700", description: "boissons-froides" },
+      { title: "EAU 1L", price: "4,500", description: "boissons-froides" },
       { title: "GARCI", price: "3,900", description: "boissons-froides" },
       { title: "SODA", price: "4,600", description: "boissons-froides" },
       { title: "BOISSONS ÉNERGÉTIQUES", price: "9,500", description: "boissons-froides" },
