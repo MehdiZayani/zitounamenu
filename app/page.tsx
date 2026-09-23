@@ -404,11 +404,11 @@ const menuData: MenuSection[] = [
     label: "CHICHA",
     subtitle: "Classique & Adalya",
     leftItems: [
-      { title: "MENTHE", price: "12,000", description: "classique" },
-      { title: "RAISIN", price: "12,000", description: "classique" },
-      { title: "RAISIN MENTHE", price: "12,000", description: "adalya" },
-      { title: "LOVE", price: "15,000", description: "adalya" },
-      { title: "CHIKH MONEY", price: "15,000", description: "adalya" }
+      { title: "MENTHE", price: "14,000", description: "classique" },
+      { title: "RAISIN", price: "14,000", description: "classique" },
+      { title: "RAISIN MENTHE", price: "14,000", description: "adalya" },
+      { title: "LOVE", price: "16,000", description: "adalya" },
+      { title: "CHIKH MONEY", price: "16,000", description: "adalya" }
     ],
     rightItems: []
   }
