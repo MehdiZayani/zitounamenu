@@ -13,15 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zitounamenu.vercel.app"),
   title: "Menu Zitouna",
-  description: "Menu Zitouna",
+  description: "Menu Zitouna - Café & Restaurant",
   icons: {
     icon: [
       { url: "/logozitouna.png", type: "image/png", sizes: "512x512" },
-      { url: "/logozitouna.jpg", type: "image/jpeg" },
+      { url: "/icon.png", type: "image/png" },
     ],
     shortcut: "/logozitouna.png",
-    apple: "/logozitouna.png",
+    apple: [
+      { url: "/logozitouna.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    title: "Menu Zitouna",
+    description: "Menu Zitouna - Café & Restaurant",
+    images: [{ url: "/logozitouna.png", width: 512, height: 512, alt: "Zitouna" }],
   },
 };
 
