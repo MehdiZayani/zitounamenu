@@ -20,6 +20,7 @@ import {
   ShoppingBag,
   AlertCircle,
   CheckCircle2,
+  FolderPlus,
 } from "lucide-react";
 
 interface Category {
@@ -68,6 +69,12 @@ export default function AdminDashboardPage() {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+
+  // Add Category Modal state
+  const [isAddCategoryModalOpen, setIsAddCategoryModalOpen] = useState(false);
+  const [newCategoryLabel, setNewCategoryLabel] = useState("");
+  const [newCategorySubtitle, setNewCategorySubtitle] = useState("Menu");
+  const [categoryFormSubmitting, setCategoryFormSubmitting] = useState(false);
 
   // Form states for Add Product
   const [newTitle, setNewTitle] = useState("");
@@ -354,6 +361,43 @@ export default function AdminDashboardPage() {
       }, 1500);
     } catch {
       setPasswordError("Erreur serveur.");
+    }
+  };
+
+  // Add Category
+  const handleAddCategory = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newCategoryLabel.trim()) {
+      showToast("Le nom de la catégorie est obligatoire", "error");
+      return;
+    }
+
+    setCategoryFormSubmitting(true);
+    try {
+      const res = await fetch("/api/admin/categories", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          label: newCategoryLabel.trim(),
+          subtitle: newCategorySubtitle.trim() || "Menu",
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Erreur de création");
+      }
+
+      const data = await res.json();
+      setCategories((prev) => [...prev, data.category]);
+      setIsAddCategoryModalOpen(false);
+      setNewCategoryLabel("");
+      setNewCategorySubtitle("Menu");
+      showToast(`Catégorie "${data.category.label}" créée avec succès !`);
+    } catch (err: any) {
+      showToast(err.message || "Impossible de créer la catégorie", "error");
+    } finally {
+      setCategoryFormSubmitting(false);
     }
   };
 
@@ -673,6 +717,16 @@ export default function AdminDashboardPage() {
                     </button>
                   );
                 })}
+
+                {/* Add Category Button */}
+                <button
+                  onClick={() => setIsAddCategoryModalOpen(true)}
+                  title="Ajouter une catégorie"
+                  className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-dashed border-[#c9782b]/50 text-[#c9782b] hover:bg-[#c9782b]/10 hover:border-[#c9782b] flex items-center gap-1.5"
+                >
+                  <FolderPlus className="w-3.5 h-3.5" />
+                  <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">Nouvelle catégorie</span>
+                </button>
               </div>
             </div>
 
@@ -1368,6 +1422,121 @@ export default function AdminDashboardPage() {
                     className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#c9782b] to-[#b0651e] text-[#0f1e12] text-sm font-bold tracking-wide transition cursor-pointer"
                   >
                     METTRE À JOUR
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: Add Category */}
+        {isAddCategoryModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+            <div className="bg-[#102014]/95 border border-[#eedab7]/30 rounded-3xl w-full max-w-md p-6 shadow-2xl space-y-4">
+              <div className="flex items-center justify-between border-b border-[#eedab7]/20 pb-3">
+                <h3
+                  style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.12em" }}
+                  className="text-2xl font-bold text-[#eedab7] flex items-center gap-2 m-0"
+                >
+                  <FolderPlus className="w-5 h-5 text-[#c9782b]" />
+                  <span>NOUVELLE CATÉGORIE</span>
+                </h3>
+                <button
+                  onClick={() => setIsAddCategoryModalOpen(false)}
+                  className="text-[#eedab7]/60 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <form onSubmit={handleAddCategory} className="space-y-4">
+                <div>
+                  <label
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="block text-xs uppercase tracking-wider text-[#c9782b] mb-1.5 font-bold"
+                  >
+                    Nom de la catégorie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="ex: DESSERTS"
+                    value={newCategoryLabel}
+                    onChange={(e) => setNewCategoryLabel(e.target.value)}
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="w-full px-3.5 py-2.5 bg-[#0a150c]/80 border border-[#eedab7]/25 rounded-xl text-sm text-[#eedab7] focus:outline-none focus:border-[#c9782b] transition"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="block text-xs uppercase tracking-wider text-[#c9782b] mb-1.5 font-bold"
+                  >
+                    Sous-titre
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ex: Menu"
+                    value={newCategorySubtitle}
+                    onChange={(e) => setNewCategorySubtitle(e.target.value)}
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="w-full px-3.5 py-2.5 bg-[#0a150c]/80 border border-[#eedab7]/25 rounded-xl text-sm text-[#eedab7] focus:outline-none focus:border-[#c9782b] transition"
+                  />
+                  <p
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="text-[10px] text-[#eedab7]/50 mt-1"
+                  >
+                    Apparaît sous le nom de la catégorie dans le menu client. Par défaut : "Menu"
+                  </p>
+                </div>
+
+                {newCategoryLabel.trim() && (
+                  <div
+                    className="px-3 py-2 rounded-lg bg-[#0a150c]/60 border border-[#eedab7]/15"
+                  >
+                    <span
+                      style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                      className="text-[10px] uppercase tracking-wider text-[#eedab7]/50 font-bold"
+                    >
+                      Slug auto-généré
+                    </span>
+                    <p
+                      style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                      className="text-xs text-[#c9782b] font-mono mt-0.5"
+                    >
+                      {newCategoryLabel
+                        .trim()
+                        .toLowerCase()
+                        .normalize("NFD")
+                        .replace(/[\u0300-\u036f]/g, "")
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "")}
+                    </p>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#eedab7]/20">
+                  <button
+                    type="button"
+                    onClick={() => setIsAddCategoryModalOpen(false)}
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={categoryFormSubmitting}
+                    style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.1em" }}
+                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#c9782b] to-[#b0651e] text-[#0f1e12] text-sm font-bold tracking-wide transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
+                  >
+                    {categoryFormSubmitting ? (
+                      <div className="w-3.5 h-3.5 border-2 border-[#0f1e12] border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <FolderPlus className="w-4 h-4" />
+                    )}
+                    <span>CRÉER LA CATÉGORIE</span>
                   </button>
                 </div>
               </form>
