@@ -17,7 +17,11 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: #0f1e12;
+  background-image: url('/coffee/boissons-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: "Cormorant Garamond", Georgia, serif;
   min-height: 100vh;

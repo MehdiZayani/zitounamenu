@@ -2872,7 +2872,15 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
         .no-scrollbar::-webkit-scrollbar { display: none; }
       `}</style>
 
-      <main>
+      <main
+        className="w-full min-h-screen"
+        style={{
+          backgroundImage: "url('/coffee/boissons-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed"
+        }}
+      >
         {/* Hero header */}
         <header id="top" className="w-full flex items-center justify-center" style={{ backgroundImage: "url('/coffee/boissons-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="w-[92vw] sm:w-[88vw] max-w-[1200px] text-center py-16 sm:py-28">
@@ -2924,7 +2932,7 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-10 py-8">
+        <div className="flex flex-col items-center w-full">
           {(source as MenuSection[]).map((s) => (
             <section id={s.id} key={s.id} className="w-full flex justify-center" style={{ scrollMarginTop: '80px' }}>
               {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "boissons" ? <BoissonsMenu section={s} /> : s.id === "pizzas" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "rolls" ? <RollsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres" ? <GaufresMenu section={s} /> : s.id === "crepes" ? <CrepesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants" ? <CroissantsMenu section={s} /> : s.id === "toasts" ? <ToastsCombinedMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
