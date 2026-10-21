@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,6 +25,8 @@ import {
   ArrowDown,
   ArrowUpDown,
   SlidersHorizontal,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 interface Category {
@@ -86,6 +88,25 @@ export default function AdminDashboardPage() {
   const [savingOrder, setSavingOrder] = useState(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
   const [categoryToDelete, setCategoryToDelete] = useState<Category | null>(null);
+
+  // Category horizontal scroll ref and handlers
+  const categoryScrollRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollCategories = (direction: "left" | "right") => {
+    if (categoryScrollRef.current) {
+      categoryScrollRef.current.scrollBy({
+        left: direction === "left" ? -280 : 280,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleCategoryWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (categoryScrollRef.current && e.deltaY !== 0) {
+      e.preventDefault();
+      categoryScrollRef.current.scrollLeft += e.deltaY;
+    }
+  };
 
   // Form states for Add Product
   const [newTitle, setNewTitle] = useState("");
@@ -574,6 +595,25 @@ export default function AdminDashboardPage() {
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(201, 120, 43, 0.4) rgba(16, 32, 20, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 6px;
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(16, 32, 20, 0.6);
+          border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(201, 120, 43, 0.5);
+          border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(201, 120, 43, 0.85);
+        }
       `}</style>
 
       <div
@@ -805,58 +845,86 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Category Horizontal Navigation */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+              <div className="relative flex items-center gap-1.5 w-full">
+                {/* Scroll Left Button */}
                 <button
-                  onClick={() => setSelectedCategory("all")}
-                  style={{ fontFamily: "'Myriad Pro', sans-serif" }}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs transition cursor-pointer ${
-                    selectedCategory === "all"
-                      ? "bg-[#c9782b] text-[#0f1e12] font-bold shadow-md"
-                      : "bg-[#0a150c]/80 text-[#eedab7]/80 hover:bg-[#18301e] hover:text-[#eedab7] border border-[#eedab7]/20"
-                  }`}
+                  type="button"
+                  onClick={() => scrollCategories("left")}
+                  aria-label="Défiler vers la gauche"
+                  className="p-1.5 rounded-lg bg-[#0a150c]/90 border border-[#eedab7]/30 text-[#eedab7] hover:bg-[#c9782b]/20 hover:border-[#c9782b] transition flex-shrink-0 cursor-pointer shadow-md"
+                  title="Défiler vers la gauche"
                 >
-                  Toutes ({products.length})
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
 
-                {categories.map((cat) => {
-                  const count = products.filter((p) => p.categoryId === cat.id).length;
-                  const isSelected = selectedCategory === cat.id;
-                  return (
-                    <button
-                      key={cat.id}
-                      onClick={() => setSelectedCategory(cat.id)}
-                      style={{ fontFamily: "'Myriad Pro', sans-serif" }}
-                      className={`px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer ${
-                        isSelected
-                          ? "bg-[#c9782b] text-[#0f1e12] font-bold shadow-md"
-                          : "bg-[#0a150c]/80 text-[#eedab7]/80 hover:bg-[#18301e] hover:text-[#eedab7] border border-[#eedab7]/20"
-                      }`}
-                    >
-                      {cat.label} ({count})
-                    </button>
-                  );
-                })}
-
-                {/* Reorder Categories Button */}
-                <button
-                  onClick={openManageCategories}
-                  title="Modifier l'ordre des catégories et les gérer"
-                  className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-[#eedab7]/30 text-[#eedab7] hover:bg-[#eedab7]/15 hover:border-[#eedab7]/60 flex items-center gap-1.5"
+                <div
+                  ref={categoryScrollRef}
+                  onWheel={handleCategoryWheel}
+                  className="flex items-center gap-2 overflow-x-auto pb-2 pt-1 flex-1 custom-scrollbar scroll-smooth"
                 >
-                  <ArrowUpDown className="w-3.5 h-3.5 text-[#c9782b]" />
-                  <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">
-                    Modifier l'ordre ({categories.length})
-                  </span>
-                </button>
+                  <button
+                    onClick={() => setSelectedCategory("all")}
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className={`px-3.5 py-1.5 rounded-lg text-xs transition cursor-pointer flex-shrink-0 ${
+                      selectedCategory === "all"
+                        ? "bg-[#c9782b] text-[#0f1e12] font-bold shadow-md"
+                        : "bg-[#0a150c]/80 text-[#eedab7]/80 hover:bg-[#18301e] hover:text-[#eedab7] border border-[#eedab7]/20"
+                    }`}
+                  >
+                    Toutes ({products.length})
+                  </button>
 
-                {/* Add Category Button */}
+                  {categories.map((cat) => {
+                    const count = products.filter((p) => p.categoryId === cat.id).length;
+                    const isSelected = selectedCategory === cat.id;
+                    return (
+                      <button
+                        key={cat.id}
+                        onClick={() => setSelectedCategory(cat.id)}
+                        style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer flex-shrink-0 ${
+                          isSelected
+                            ? "bg-[#c9782b] text-[#0f1e12] font-bold shadow-md"
+                            : "bg-[#0a150c]/80 text-[#eedab7]/80 hover:bg-[#18301e] hover:text-[#eedab7] border border-[#eedab7]/20"
+                        }`}
+                      >
+                        {cat.label} ({count})
+                      </button>
+                    );
+                  })}
+
+                  {/* Reorder Categories Button */}
+                  <button
+                    onClick={openManageCategories}
+                    title="Modifier l'ordre des catégories et les gérer"
+                    className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-[#eedab7]/30 text-[#eedab7] hover:bg-[#eedab7]/15 hover:border-[#eedab7]/60 flex items-center gap-1.5 flex-shrink-0"
+                  >
+                    <ArrowUpDown className="w-3.5 h-3.5 text-[#c9782b]" />
+                    <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">
+                      Modifier l'ordre ({categories.length})
+                    </span>
+                  </button>
+
+                  {/* Add Category Button */}
+                  <button
+                    onClick={() => setIsAddCategoryModalOpen(true)}
+                    title="Ajouter une catégorie"
+                    className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-dashed border-[#c9782b]/50 text-[#c9782b] hover:bg-[#c9782b]/10 hover:border-[#c9782b] flex items-center gap-1.5 flex-shrink-0"
+                  >
+                    <FolderPlus className="w-3.5 h-3.5" />
+                    <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">Nouvelle catégorie</span>
+                  </button>
+                </div>
+
+                {/* Scroll Right Button */}
                 <button
-                  onClick={() => setIsAddCategoryModalOpen(true)}
-                  title="Ajouter une catégorie"
-                  className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-dashed border-[#c9782b]/50 text-[#c9782b] hover:bg-[#c9782b]/10 hover:border-[#c9782b] flex items-center gap-1.5"
+                  type="button"
+                  onClick={() => scrollCategories("right")}
+                  aria-label="Défiler vers la droite"
+                  className="p-1.5 rounded-lg bg-[#0a150c]/90 border border-[#eedab7]/30 text-[#eedab7] hover:bg-[#c9782b]/20 hover:border-[#c9782b] transition flex-shrink-0 cursor-pointer shadow-md"
+                  title="Défiler vers la droite"
                 >
-                  <FolderPlus className="w-3.5 h-3.5" />
-                  <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">Nouvelle catégorie</span>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -1704,7 +1772,7 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Categories List */}
-              <div className="flex-1 overflow-y-auto space-y-2 pr-1 no-scrollbar">
+              <div className="flex-1 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
                 {orderedCategories.length === 0 ? (
                   <p className="text-center py-8 text-sm text-[#eedab7]/50" style={{ fontFamily: "'Myriad Pro', sans-serif" }}>
                     Aucune catégorie enregistrée.

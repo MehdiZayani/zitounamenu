@@ -2829,6 +2829,13 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
     if (el) el.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
   };
 
+  const handleNavWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (navRef.current && e.deltaY !== 0) {
+      e.preventDefault();
+      navRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
   useEffect(() => {
     // observe which section is currently in view to highlight nav
     const observer = new IntersectionObserver(
@@ -2891,7 +2898,7 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
             >
               <span className="text-lg sm:text-xl">◀</span>
             </button>
-            <div ref={navRef} className="no-scrollbar overflow-x-auto whitespace-nowrap flex gap-3 sm:gap-4 px-2 sm:px-4 py-4 flex-1 items-center">
+            <div ref={navRef} onWheel={handleNavWheel} className="no-scrollbar overflow-x-auto whitespace-nowrap flex gap-3 sm:gap-4 px-2 sm:px-4 py-4 flex-1 items-center">
               {(source as MenuSection[]).map((s, i) => (
                 <button
                   key={s.id}
