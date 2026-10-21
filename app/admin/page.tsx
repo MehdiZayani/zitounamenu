@@ -21,6 +21,10 @@ import {
   AlertCircle,
   CheckCircle2,
   FolderPlus,
+  ArrowUp,
+  ArrowDown,
+  ArrowUpDown,
+  SlidersHorizontal,
 } from "lucide-react";
 
 interface Category {
@@ -75,6 +79,13 @@ export default function AdminDashboardPage() {
   const [newCategoryLabel, setNewCategoryLabel] = useState("");
   const [newCategorySubtitle, setNewCategorySubtitle] = useState("Menu");
   const [categoryFormSubmitting, setCategoryFormSubmitting] = useState(false);
+
+  // Reorder & Manage Categories Modal state
+  const [isManageCategoriesModalOpen, setIsManageCategoriesModalOpen] = useState(false);
+  const [orderedCategories, setOrderedCategories] = useState<Category[]>([]);
+  const [savingOrder, setSavingOrder] = useState(false);
+  const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+  const [categoryToDelete, setCategoryToDelete] = useState<Category | null>(null);
 
   // Form states for Add Product
   const [newTitle, setNewTitle] = useState("");
@@ -401,6 +412,114 @@ export default function AdminDashboardPage() {
     }
   };
 
+  // Open Manage Categories
+  const openManageCategories = () => {
+    setOrderedCategories([...categories]);
+    setIsManageCategoriesModalOpen(true);
+  };
+
+  // Move Category Up or Down
+  const moveCategory = (index: number, direction: "up" | "down") => {
+    const targetIndex = direction === "up" ? index - 1 : index + 1;
+    if (targetIndex < 0 || targetIndex >= orderedCategories.length) return;
+
+    const updated = [...orderedCategories];
+    const [moved] = updated.splice(index, 1);
+    updated.splice(targetIndex, 0, moved);
+    setOrderedCategories(updated);
+  };
+
+  // Save Category Order
+  const handleSaveCategoryOrder = async () => {
+    setSavingOrder(true);
+    try {
+      const res = await fetch("/api/admin/categories/reorder", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          categoryIds: orderedCategories.map((c) => c.id),
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Erreur lors de la réorganisation");
+      }
+
+      const data = await res.json();
+      setCategories(data.categories);
+      showToast("Ordre des catégories enregistré avec succès !");
+      setIsManageCategoriesModalOpen(false);
+    } catch (err: any) {
+      showToast(err.message || "Impossible de sauvegarder l'ordre", "error");
+    } finally {
+      setSavingOrder(false);
+    }
+  };
+
+  // Update Category (label, subtitle)
+  const handleUpdateCategory = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingCategory || !editingCategory.label.trim()) return;
+
+    setCategoryFormSubmitting(true);
+    try {
+      const res = await fetch(`/api/admin/categories/${editingCategory.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          label: editingCategory.label.trim(),
+          subtitle: editingCategory.subtitle?.trim() || "Menu",
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Erreur lors de la mise à jour");
+      }
+
+      const data = await res.json();
+      setCategories((prev) =>
+        prev.map((c) => (c.id === editingCategory.id ? data.category : c))
+      );
+      setOrderedCategories((prev) =>
+        prev.map((c) => (c.id === editingCategory.id ? data.category : c))
+      );
+      setEditingCategory(null);
+      showToast(`Catégorie "${data.category.label}" mise à jour !`);
+    } catch (err: any) {
+      showToast(err.message || "Impossible de mettre à jour la catégorie", "error");
+    } finally {
+      setCategoryFormSubmitting(false);
+    }
+  };
+
+  // Delete Category
+  const handleDeleteCategory = async () => {
+    if (!categoryToDelete) return;
+    setCategoryFormSubmitting(true);
+    try {
+      const res = await fetch(`/api/admin/categories/${categoryToDelete.id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) throw new Error("Erreur lors de la suppression");
+
+      setCategories((prev) => prev.filter((c) => c.id !== categoryToDelete.id));
+      setOrderedCategories((prev) => prev.filter((c) => c.id !== categoryToDelete.id));
+      setProducts((prev) => prev.filter((p) => p.categoryId !== categoryToDelete.id));
+      if (selectedCategory === categoryToDelete.id) {
+        setSelectedCategory("all");
+      }
+      showToast(`Catégorie "${categoryToDelete.label}" supprimée avec succès.`);
+      setCategoryToDelete(null);
+    } catch {
+      showToast("Impossible de supprimer la catégorie", "error");
+    } finally {
+      setCategoryFormSubmitting(false);
+    }
+  };
+
   // Filtered Products
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
@@ -717,6 +836,18 @@ export default function AdminDashboardPage() {
                     </button>
                   );
                 })}
+
+                {/* Reorder Categories Button */}
+                <button
+                  onClick={openManageCategories}
+                  title="Modifier l'ordre des catégories et les gérer"
+                  className="px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition cursor-pointer border border-[#eedab7]/30 text-[#eedab7] hover:bg-[#eedab7]/15 hover:border-[#eedab7]/60 flex items-center gap-1.5"
+                >
+                  <ArrowUpDown className="w-3.5 h-3.5 text-[#c9782b]" />
+                  <span style={{ fontFamily: "'Myriad Pro', sans-serif" }} className="font-semibold">
+                    Modifier l'ordre ({categories.length})
+                  </span>
+                </button>
 
                 {/* Add Category Button */}
                 <button
@@ -1521,7 +1652,7 @@ export default function AdminDashboardPage() {
                     type="button"
                     onClick={() => setIsAddCategoryModalOpen(false)}
                     style={{ fontFamily: "'Myriad Pro', sans-serif" }}
-                    className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white"
+                    className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white cursor-pointer"
                   >
                     Annuler
                   </button>
@@ -1540,6 +1671,322 @@ export default function AdminDashboardPage() {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: Manage & Reorder Categories */}
+        {isManageCategoriesModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+            <div className="bg-[#102014]/95 border border-[#eedab7]/30 rounded-3xl w-full max-w-2xl p-6 shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
+              <div className="flex items-center justify-between border-b border-[#eedab7]/20 pb-3">
+                <div>
+                  <h3
+                    style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.12em" }}
+                    className="text-2xl font-bold text-[#eedab7] flex items-center gap-2 m-0"
+                  >
+                    <ArrowUpDown className="w-5 h-5 text-[#c9782b]" />
+                    <span>ORDRE DES CATÉGORIES</span>
+                  </h3>
+                  <p
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="text-xs text-[#eedab7]/60 mt-1"
+                  >
+                    Utilisez les flèches pour modifier l'ordre d'affichage des catégories sur le menu client.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsManageCategoriesModalOpen(false)}
+                  className="text-[#eedab7]/60 hover:text-white p-1"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Categories List */}
+              <div className="flex-1 overflow-y-auto space-y-2 pr-1 no-scrollbar">
+                {orderedCategories.length === 0 ? (
+                  <p className="text-center py-8 text-sm text-[#eedab7]/50" style={{ fontFamily: "'Myriad Pro', sans-serif" }}>
+                    Aucune catégorie enregistrée.
+                  </p>
+                ) : (
+                  orderedCategories.map((cat, idx) => {
+                    const isFirst = idx === 0;
+                    const isLast = idx === orderedCategories.length - 1;
+                    const prodCount = products.filter((p) => p.categoryId === cat.id).length;
+
+                    return (
+                      <div
+                        key={cat.id}
+                        className="flex items-center justify-between p-3 rounded-2xl bg-[#0a150c]/80 border border-[#eedab7]/20 hover:border-[#eedab7]/40 transition gap-3"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          {/* Order Index Badge */}
+                          <div
+                            style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                            className="w-7 h-7 rounded-lg bg-[#c9782b]/20 border border-[#c9782b]/40 text-[#c9782b] font-bold text-xs flex items-center justify-center flex-shrink-0"
+                          >
+                            {idx + 1}
+                          </div>
+
+                          {/* Category Details */}
+                          <div className="min-w-0">
+                            <h4
+                              style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.08em" }}
+                              className="text-base font-bold text-[#eedab7] m-0 truncate"
+                            >
+                              {cat.label}
+                            </h4>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              <span
+                                style={{ fontFamily: "'zoxi-regular', serif" }}
+                                className="text-xs text-[#c9782b]"
+                              >
+                                {cat.subtitle || "Menu"}
+                              </span>
+                              <span className="text-[10px] text-[#eedab7]/40">•</span>
+                              <span
+                                style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                                className="text-[11px] text-[#eedab7]/60"
+                              >
+                                {prodCount} {prodCount > 1 ? "produits" : "produit"}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          {/* Move Up */}
+                          <button
+                            type="button"
+                            disabled={isFirst}
+                            onClick={() => moveCategory(idx, "up")}
+                            title="Monter"
+                            className={`p-2 rounded-lg border transition ${
+                              isFirst
+                                ? "opacity-30 border-transparent text-[#eedab7]/30 cursor-not-allowed"
+                                : "border-[#eedab7]/20 text-[#eedab7] hover:bg-[#eedab7]/10 hover:border-[#c9782b] cursor-pointer"
+                            }`}
+                          >
+                            <ArrowUp className="w-4 h-4" />
+                          </button>
+
+                          {/* Move Down */}
+                          <button
+                            type="button"
+                            disabled={isLast}
+                            onClick={() => moveCategory(idx, "down")}
+                            title="Descendre"
+                            className={`p-2 rounded-lg border transition ${
+                              isLast
+                                ? "opacity-30 border-transparent text-[#eedab7]/30 cursor-not-allowed"
+                                : "border-[#eedab7]/20 text-[#eedab7] hover:bg-[#eedab7]/10 hover:border-[#c9782b] cursor-pointer"
+                            }`}
+                          >
+                            <ArrowDown className="w-4 h-4" />
+                          </button>
+
+                          {/* Edit Category */}
+                          <button
+                            type="button"
+                            onClick={() => setEditingCategory(cat)}
+                            title="Modifier le nom ou le sous-titre"
+                            className="p-2 rounded-lg border border-[#eedab7]/20 text-[#eedab7] hover:bg-[#eedab7]/10 hover:border-[#c9782b] cursor-pointer transition"
+                          >
+                            <Edit2 className="w-4 h-4 text-[#c9782b]" />
+                          </button>
+
+                          {/* Delete Category */}
+                          <button
+                            type="button"
+                            onClick={() => setCategoryToDelete(cat)}
+                            title="Supprimer la catégorie"
+                            className="p-2 rounded-lg border border-red-500/20 text-red-300 hover:bg-red-950/40 hover:border-red-500/40 cursor-pointer transition"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-between pt-3 border-t border-[#eedab7]/20">
+                <button
+                  type="button"
+                  onClick={() => setIsManageCategoriesModalOpen(false)}
+                  style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSaveCategoryOrder}
+                  disabled={savingOrder || orderedCategories.length === 0}
+                  style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.1em" }}
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#c9782b] to-[#b0651e] text-[#0f1e12] text-sm font-bold tracking-wide transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
+                >
+                  {savingOrder ? (
+                    <div className="w-4 h-4 border-2 border-[#0f1e12] border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Save className="w-4 h-4" />
+                  )}
+                  <span>ENREGISTRER L'ORDRE</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: Edit Category */}
+        {editingCategory && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+            <div className="bg-[#102014]/95 border border-[#eedab7]/30 rounded-3xl w-full max-w-md p-6 shadow-2xl space-y-4">
+              <div className="flex items-center justify-between border-b border-[#eedab7]/20 pb-3">
+                <h3
+                  style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.12em" }}
+                  className="text-2xl font-bold text-[#eedab7] flex items-center gap-2 m-0"
+                >
+                  <Edit2 className="w-5 h-5 text-[#c9782b]" />
+                  <span>MODIFIER LA CATÉGORIE</span>
+                </h3>
+                <button
+                  onClick={() => setEditingCategory(null)}
+                  className="text-[#eedab7]/60 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <form onSubmit={handleUpdateCategory} className="space-y-4">
+                <div>
+                  <label
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="block text-xs uppercase tracking-wider text-[#c9782b] mb-1.5 font-bold"
+                  >
+                    Nom de la catégorie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={editingCategory.label}
+                    onChange={(e) =>
+                      setEditingCategory({ ...editingCategory, label: e.target.value })
+                    }
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="w-full px-3.5 py-2.5 bg-[#0a150c]/80 border border-[#eedab7]/25 rounded-xl text-sm text-[#eedab7] focus:outline-none focus:border-[#c9782b] transition"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="block text-xs uppercase tracking-wider text-[#c9782b] mb-1.5 font-bold"
+                  >
+                    Sous-titre
+                  </label>
+                  <input
+                    type="text"
+                    value={editingCategory.subtitle || ""}
+                    onChange={(e) =>
+                      setEditingCategory({ ...editingCategory, subtitle: e.target.value })
+                    }
+                    placeholder="Menu"
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="w-full px-3.5 py-2.5 bg-[#0a150c]/80 border border-[#eedab7]/25 rounded-xl text-sm text-[#eedab7] focus:outline-none focus:border-[#c9782b] transition"
+                  />
+                </div>
+
+                <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#eedab7]/20">
+                  <button
+                    type="button"
+                    onClick={() => setEditingCategory(null)}
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white cursor-pointer"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={categoryFormSubmitting}
+                    style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.1em" }}
+                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#c9782b] to-[#b0651e] text-[#0f1e12] text-sm font-bold tracking-wide transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
+                  >
+                    {categoryFormSubmitting ? (
+                      <div className="w-3.5 h-3.5 border-2 border-[#0f1e12] border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <Save className="w-4 h-4" />
+                    )}
+                    <span>ENREGISTRER</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: Confirm Delete Category */}
+        {categoryToDelete && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+            <div className="bg-[#102014]/95 border border-red-500/30 rounded-3xl w-full max-w-md p-6 shadow-2xl space-y-4">
+              <div className="flex items-center gap-3 text-red-400">
+                <div className="w-10 h-10 rounded-xl bg-red-950/60 border border-red-500/30 flex items-center justify-center">
+                  <AlertCircle className="w-5 h-5 text-red-400" />
+                </div>
+                <div>
+                  <h3
+                    style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.1em" }}
+                    className="text-xl font-bold text-white m-0"
+                  >
+                    SUPPRIMER LA CATÉGORIE
+                  </h3>
+                  <p
+                    style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                    className="text-xs text-[#eedab7]/70 mt-0.5"
+                  >
+                    Cette action supprimera également tous les produits de cette catégorie.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-3 rounded-xl bg-red-950/30 border border-red-500/20">
+                <p
+                  style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                  className="text-sm text-[#eedab7]"
+                >
+                  Êtes-vous sûr de vouloir supprimer la catégorie{" "}
+                  <strong className="text-white">"{categoryToDelete.label}"</strong> ?
+                </p>
+              </div>
+
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setCategoryToDelete(null)}
+                  style={{ fontFamily: "'Myriad Pro', sans-serif" }}
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-[#eedab7]/60 hover:text-white cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="button"
+                  disabled={categoryFormSubmitting}
+                  onClick={handleDeleteCategory}
+                  style={{ fontFamily: "'LaLuxes', serif", letterSpacing: "0.08em" }}
+                  className="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold tracking-wider transition flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                >
+                  {categoryFormSubmitting ? (
+                    <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Trash2 className="w-3.5 h-3.5" />
+                  )}
+                  <span>CONFIRMER LA SUPPRESSION</span>
+                </button>
+              </div>
             </div>
           </div>
         )}

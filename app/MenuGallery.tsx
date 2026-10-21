@@ -2636,98 +2636,151 @@ const ChichaMenu = ({ section }: { section: MenuSection }) => {
   );
 };
 
-const TwoColumnMenu = ({ section, showBackground = true }: { section: MenuSection; showBackground?: boolean }) => {
-  const left = section.leftItems ?? (section.items ?? []).slice(0, Math.ceil((section.items ?? []).length / 2));
-  const right = section.rightItems ?? (section.items ?? []).slice(Math.ceil((section.items ?? []).length / 2));
+const TwoColumnMenu = ({ section }: { section: MenuSection }) => {
+  const left = section.leftItems ?? [];
+  const right = section.rightItems ?? [];
+  const hasTwoSides = left.length > 0 && right.length > 0;
+  const allItems = section.items && section.items.length > 0 ? section.items : [...left, ...right];
 
-  const maxLen = Math.max(left.length, right.length);
-  const rows = Array.from({ length: maxLen }).map((_, i) => ({ left: left[i], right: right[i] }));
-
-  const frame = (
+  return (
     <div
-      className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8"
-      style={{ maxWidth: 1200, backgroundImage: "url('/coffee/boissons-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="min-h-fit w-screen flex items-start justify-center"
+      style={{
+        backgroundImage: "url('/coffee/boissons-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll"
+      }}
     >
-      <div className="flex-1 border border-[#eedab7] p-8 relative">
-        {/* Title */}
-        <div className="text-center relative">
+      <div
+        className="w-[92vw] sm:w-[88vw] min-h-auto sm:min-h-[88vh] flex flex-col items-stretch justify-start p-4 sm:p-8 relative"
+        style={{ maxWidth: hasTwoSides ? 1000 : 700 }}
+      >
+        {/* Category Title */}
+        <div className="text-center mb-8 mt-6">
           <h1
-            className="mb-0 text-4xl sm:text-5xl md:text-[96px]"
-            style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.18em", fontWeight: 300, marginBottom: 4 }}
+            className="text-3xl sm:text-4xl md:text-[56px] tracking-widest"
+            style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 0 }}
           >
             {section.label}
           </h1>
-
           <span
-            className="absolute left-1/2 -translate-x-1/2"
-            style={{ color: "#c9782b", pointerEvents: 'none' }}
+            className="block text-xl sm:text-2xl md:text-[36px] -mt-1"
+            style={{ fontFamily: "'zoxi-regular', serif", color: "#c9782b", letterSpacing: "0.05em" }}
           >
-            <span className="text-lg sm:text-2xl md:text-[52px]" style={{ fontFamily: section.subtitle === "Menu" ? "'zoxi-regular', serif" : "'Tangerine', cursive", letterSpacing: '0.02em' }}>{section.subtitle}</span>
+            {section.subtitle || "Menu"}
           </span>
-
-          <div className="mx-auto my-5" style={{ width: 56, borderTop: "2px solid rgba(238, 218, 183, 0.9)" }} />
-          <p className="text-xs sm:text-sm" style={{ color: "#eedab7", marginTop: 8, fontFamily: "'Myriad Pro', sans-serif" }}>
-            {section.id === "petit-dej" ? "Tous nos petits déjeuners sont servis avec un café et un mini jus" : "Tous nos toasts sont servis avec un café et un mini jus"}
-          </p>
+          <div className="mx-auto mt-3" style={{ width: 50, borderTop: "1px solid rgba(238, 218, 183, 0.5)" }} />
         </div>
 
-        <div className="mt-6">
-          <div className="flex flex-col gap-3">
-            {rows.map((row, idx) => (
-              <div key={idx} className="flex flex-col gap-4">
-                {row.left && (
-                  <div className="w-full sm:w-[60%] p-4" style={{ background: "transparent" }}>
-                    <div className="flex justify-between items-baseline">
-                      <h3 className="text-xl sm:text-3xl md:text-[48px]" style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.12em", lineHeight: 1 }}>{row.left.title}</h3>
-                      <div className="text-lg sm:text-2xl md:text-[36px]" style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}>{row.left.price}</div>
-                    </div>
-                    <div className="mt-3" style={{ borderTop: "2px solid rgba(239,232,214,0.95)", width: "100%" }} />
-                    {row.left.description && <p className="text-sm sm:text-base" style={{ color: "#eedab7", marginTop: 12, fontFamily: "'Myriad Pro', sans-serif" }}>{row.left.description}</p>}
-                  </div>
-                )}
+        {/* Empty state */}
+        {allItems.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-base sm:text-lg" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif", opacity: 0.8 }}>
+              Aucun produit dans cette catégorie pour le moment.
+            </p>
+          </div>
+        )}
 
-                {row.right && (
-                  <div className="w-full sm:w-[60%] p-4 sm:ml-auto" style={{ background: "transparent" }}>
-                    <div className="flex justify-between items-baseline">
-                      <h3 className="text-xl sm:text-3xl md:text-[48px]" style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.12em", lineHeight: 1 }}>{row.right.title}</h3>
-                      <div className="text-lg sm:text-2xl md:text-[36px]" style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}>{row.right.price}</div>
-                    </div>
-                    <div className="mt-3" style={{ borderTop: "2px solid rgba(239,232,214,0.95)", width: "100%" }} />
-                    {row.right.description && <p className="text-sm sm:text-base" style={{ color: "#eedab7", marginTop: 12, textAlign: "left", fontFamily: "'Myriad Pro', sans-serif" }}>{row.right.description}</p>}
+        {/* Dual column view if both left and right items are explicitly provided */}
+        {hasTwoSides ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+            {/* Left Column */}
+            <div className="flex flex-col gap-5">
+              {left.map((item, idx) => (
+                <div key={idx} className="w-full">
+                  <div className="flex justify-between items-center px-2">
+                    <h3
+                      className="text-[18px] sm:text-[20px] md:text-[22px] tracking-wider flex-1"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      className="text-[18px] sm:text-[20px] md:text-[22px] ml-2"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
+                    >
+                      {item.price}
+                    </span>
                   </div>
-                )}
-              </div>
-            ))}
+                  <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
+                  {item.description && (
+                    <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
 
-            <div className="flex justify-end mt-6">
-              <svg className="w-12 h-12 sm:w-16 sm:h-16 opacity-70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="30" stroke="#c9b896" strokeWidth="1" />
-                <path d="M20 40c6-5 18-5 24 0" stroke="#c9b896" strokeWidth="1" strokeLinecap="round" />
-              </svg>
+            {/* Right Column */}
+            <div className="flex flex-col gap-5">
+              {right.map((item, idx) => (
+                <div key={idx} className="w-full">
+                  <div className="flex justify-between items-center px-2">
+                    <h3
+                      className="text-[18px] sm:text-[20px] md:text-[22px] tracking-wider flex-1"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      className="text-[18px] sm:text-[20px] md:text-[22px] ml-2"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
+                    >
+                      {item.price}
+                    </span>
+                  </div>
+                  <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
+                  {item.description && (
+                    <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        ) : (
+          /* Alternating left/right pattern matching Salades, Omelettes, Bowls, etc. */
+          <div className="flex flex-col gap-5">
+            {allItems.map((item, idx) => {
+              const isLeft = idx % 2 === 0;
+              return (
+                <div
+                  key={idx}
+                  className={`w-[88%] sm:w-[82%] ${isLeft ? '' : 'ml-auto'}`}
+                >
+                  <div className="flex justify-between items-center px-2">
+                    <h3
+                      className="text-[18px] sm:text-[20px] md:text-[24px] tracking-wider flex-1"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7", letterSpacing: "0.08em" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      className="text-[18px] sm:text-[20px] md:text-[24px] ml-2"
+                      style={{ fontFamily: "'LaLuxes', serif", color: "#eedab7" }}
+                    >
+                      {item.price}
+                    </span>
+                  </div>
+                  <div className="mt-2" style={{ borderTop: "1px solid rgba(238, 218, 183, 0.4)" }} />
+                  {item.description && (
+                    <p className="text-[13px] sm:text-[14px] mt-1 px-2" style={{ color: "#eedab7", fontFamily: "'Myriad Pro', sans-serif" }}>
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <div className="pb-12" />
       </div>
     </div>
   );
-
-  if (showBackground) {
-    return (
-      <div
-        className="min-h-fit w-screen flex items-start justify-center"
-        style={{
-          backgroundImage: "url('/coffee/boissons-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "scroll"
-        }}
-      >
-        {frame}
-      </div>
-    );
-  }
-
-  return frame;
 };
 
 export default function MenuGallery({ initialData }: { initialData?: MenuSection[] }) {
