@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 
 interface MenuItem {
@@ -2788,6 +2788,17 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
   const [source, setSource] = useState<MenuSection[]>(initialData && initialData.length > 0 ? initialData : menuData);
   const [index, setIndex] = useState(0);
 
+  // Hide any category that does not have products
+  const visibleSections = useMemo(() => {
+    return source.filter((s) => {
+      const count =
+        (s.leftItems?.length || 0) +
+        (s.rightItems?.length || 0) +
+        (s.items?.length || 0);
+      return count > 0;
+    });
+  }, [source]);
+
   useEffect(() => {
     fetch("/api/menu")
       .then((res) => res.json())
@@ -2803,18 +2814,19 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (visibleSections.length === 0) return;
       if (e.key === "ArrowLeft") {
-        const nextIndex = (index - 1 + source.length) % source.length;
-        document.getElementById(source[nextIndex].id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const nextIndex = (index - 1 + visibleSections.length) % visibleSections.length;
+        document.getElementById(visibleSections[nextIndex].id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       if (e.key === "ArrowRight") {
-        const nextIndex = (index + 1) % source.length;
-        document.getElementById(source[nextIndex].id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const nextIndex = (index + 1) % visibleSections.length;
+        document.getElementById(visibleSections[nextIndex].id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [index, source]);
+  }, [index, visibleSections]);
 
   // navRef is used to scroll the horizontal nav bar left/right when user clicks ◀/▶
   const navRef = useRef<HTMLDivElement | null>(null);
@@ -2843,7 +2855,7 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
-            const newIndex = (source as MenuSection[]).findIndex((s) => s.id === id);
+            const newIndex = visibleSections.findIndex((s) => s.id === id);
             if (newIndex >= 0) setIndex(newIndex);
           }
         });
@@ -2851,13 +2863,13 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
       { root: null, rootMargin: '0px', threshold: 0.45 }
     );
 
-    (source as MenuSection[]).forEach((s) => {
+    visibleSections.forEach((s) => {
       const el = document.getElementById(s.id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [source]);
+  }, [visibleSections]);
 
   return (
     <>
@@ -2907,7 +2919,7 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
               <span className="text-lg sm:text-xl">◀</span>
             </button>
             <div ref={navRef} onWheel={handleNavWheel} className="no-scrollbar overflow-x-auto whitespace-nowrap flex gap-3 sm:gap-4 px-2 sm:px-4 py-4 flex-1 items-center">
-              {(source as MenuSection[]).map((s, i) => (
+              {visibleSections.map((s, i) => (
                 <button
                   key={s.id}
                   onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
@@ -2933,7 +2945,7 @@ export default function MenuGallery({ initialData }: { initialData?: MenuSection
         </div>
 
         <div className="flex flex-col items-center w-full">
-          {(source as MenuSection[]).map((s) => (
+          {visibleSections.map((s) => (
             <section id={s.id} key={s.id} className="w-full flex justify-center" style={{ scrollMarginTop: '80px' }}>
               {s.id === "chicha" ? <ChichaMenu section={s} /> : s.id === "boissons" ? <BoissonsMenu section={s} /> : s.id === "pizzas" ? <PizzasMenu section={s} /> : s.id === "sandwichs" ? <SandwichsMenu section={s} /> : s.id === "rolls" ? <RollsMenu section={s} /> : s.id === "bowls" ? <BowlsMenu section={s} /> : s.id === "plats" ? <PlatsMenu section={s} /> : s.id === "lasagnes" ? <LasagnesRisottoMenu section={s} /> : s.id === "pates" ? <PatesMenu section={s} /> : s.id === "salades" ? <SaladesMenu section={s} /> : s.id === "omelettes" ? <OmeletteMenu section={s} /> : s.id === "gaufres" ? <GaufresMenu section={s} /> : s.id === "crepes" ? <CrepesMenu section={s} /> : s.id === "brioche-perdue" ? <BriocheMenu section={s} /> : s.id === "croissants" ? <CroissantsMenu section={s} /> : s.id === "toasts" ? <ToastsCombinedMenu section={s} /> : s.id === "petit-dej" ? <PetitDejMenu section={s} /> : <TwoColumnMenu section={s} />}
             </section>

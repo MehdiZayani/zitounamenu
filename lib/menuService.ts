@@ -17,7 +17,12 @@ export async function fetchMenuSections(): Promise<MenuSection[]> {
       return initialMenuData;
     }
 
-    const sections: MenuSection[] = categories.map((cat) => {
+    // Only include categories that have at least one available product
+    const categoriesWithProducts = categories.filter(
+      (cat) => cat.products && cat.products.length > 0
+    );
+
+    const sections: MenuSection[] = categoriesWithProducts.map((cat) => {
       const leftItems = cat.products
         .filter((p) => p.side !== "right")
         .map((p) => ({
